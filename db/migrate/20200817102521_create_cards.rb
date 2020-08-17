@@ -5,7 +5,7 @@ class CreateCards < ActiveRecord::Migration[6.0]
       t.string :recipient
       t.date :event_date
       t.references :user, null: false, foreign_key: true
-      t.boolean :draft
+      t.boolean :draft, default: true
 
       t.timestamps
     end
