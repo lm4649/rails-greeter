@@ -1,7 +1,7 @@
 <h1>Edit the card for <%= @card.title %></h1>
 <%= simple_form_for @card do |f| %>
   <%= f.input :event_date, html5: true, label: "what's the event's date" %>
-  <%= f.input :description, as: :text, label: "for who, for what occasion?" %>
+  <%= f.input :description, as: :text, label: "For who, for what occasion?" %>
   <%= f.submit %>
 <%end %>
 <br>
