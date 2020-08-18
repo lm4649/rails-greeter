@@ -33,4 +33,4 @@ User.all.each do |user|
 end
 
 puts "#{Card.count} cards created"
-puts "#{Contributions.count} contributions created"
+puts "#{Contribution.count} contributions created"
