@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def dashboard
-    @cards = User.cards
-    @contributions = User.contributions
+    @cards = current_user.cards
+    @contributions = current_user.contributions
   end
 end

@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :set_flat, only: [:edit, :update, :show]
+  before_action :set_card, only: [:edit, :update, :show]
   def new
     @card = Card.new
   end
