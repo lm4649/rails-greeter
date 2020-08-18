@@ -1,6 +1,6 @@
 class Card < ApplicationRecord
   belongs_to :user
-  has_many :contributions
+  has_many :contributions, dependent: :destroy
   validates :title, presence: true, length: { minimum: 2 }
   validates :event_date, presence: true
   validate :event_date_in_future
