@@ -1,0 +1,12 @@
+<h3>Welcome to you dashboard <%= current_user.email %></h3>
+<hr>
+<h2>List of cards</h2>
+<ul>
+  <% @cards.each do |card| %>
+    <li>
+      <%= "#{card.title} (#{card.event_date})" %>
+      <%= link_to "show", card_path(card) %>
+      <%= link_to "edit", edit_card_path(card)  %>
+    </li>
+  <% end %>
+</ul>
