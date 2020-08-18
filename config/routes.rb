@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'contributions/new'
   get 'cards/new'
   get 'cards/edit'
   get 'cards/show'
