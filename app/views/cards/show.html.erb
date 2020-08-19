@@ -7,10 +7,12 @@
 <%= link_to "edit", edit_card_path(@card) %>
 <hr>
 <!-- Manager contribution displayed here or the form to add contribution-->
-<% if @manager_contribution.nil?  %>
-  <%= render "cards/partials/contribution_form"  %>
-<% else %>
-  <%= render "cards/partials/manager_contribution" %>
+<% if user_signed_in? && current_user == @card.user %>
+  <% if @manager_contribution.nil?  %>
+    <%= render "cards/partials/contribution_form"  %>
+  <% else %>
+    <%= render "cards/partials/manager_contribution" %>
+  <% end %>
 <% end %>
 <hr>
 <!-- rendering list of contributions for the manager or the contributions form for the contributors -->
