@@ -1,5 +1,7 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:edit, :update, :show]
+  skip_before_action :authenticate_user!, only: :show
+
   def new
     @card = Card.new
   end
@@ -16,6 +18,7 @@ class CardsController < ApplicationController
 
   def edit
     # @card = Card.find(params[:id])
+    @manager_contribution = manager_contribution(@card)
   end
 
   def update
@@ -29,9 +32,17 @@ class CardsController < ApplicationController
 
   def show
     # @card = Card.find(params[:id])
+    @contribution = Contribution.new
+    @manager_contribution = manager_contribution(@card)
+    @external_contributions = @card.contributions.select { |contribution| contribution.user.nil? }
   end
 
   private
+
+  def manager_contribution(card)
+    # return the manager contribution to the card or nill
+    card.contributions.select { |contribution| contribution.user == current_user }.first
+  end
 
   def set_card
     @card = Card.find(params[:id])

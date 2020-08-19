@@ -7,7 +7,7 @@ class ContributionsController < ApplicationController
     @contribution = Contribution.new(contribution_params)
     @contribution.user = current_user
     @card = Card.find(params[:card_id])
-    @contribution.card = @card
+    @contribution.card = @card if @card.user == current_user
     if @contribution.save
       redirect_to card_path(@card)
     else
