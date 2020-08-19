@@ -1,4 +1,5 @@
 class ContributionsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :create
   def new
     @contribution = Contribution.new
   end
@@ -7,7 +8,8 @@ class ContributionsController < ApplicationController
     @contribution = Contribution.new(contribution_params)
     @contribution.user = current_user
     @card = Card.find(params[:card_id])
-    @contribution.card = @card if @card.user == current_user
+    @contribution.card = @card
+    @contribution.user = current_user if @card.user == current_user
     if @contribution.save
       redirect_to card_path(@card)
     else
