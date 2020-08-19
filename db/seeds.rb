@@ -25,9 +25,10 @@ User.all.each do |user|
   # adding 10 cards to each user
   10.times do
     card = Card.create!(user: user, title: "#{Faker::Name.unique.first_name}'s birthday", event_date: Date.today + rand(1..15), description: "explaining here for who and for what event")
-    # adding 5 contributions to each card
-    5.times do
-      Contribution.create!(user: user, card: card, contributor_name: Faker::Name.unique.first_name, content: Faker::Lorem.paragraph(sentence_count: 5))
+    # adding 5 contributions to each card, the 1st one is the card manager contribution
+    Contribution.create!(user: user, card: card, contributor_name: user.email, content: Faker::Lorem.paragraph(sentence_count: 5))
+    4.times do
+      Contribution.create!(card: card, contributor_name: Faker::Name.unique.first_name, content: Faker::Lorem.paragraph(sentence_count: 5))
     end
   end
 end

@@ -1,0 +1,11 @@
+<h2>List of contributions</h2>
+<br>
+<ul>
+  <% @external_contributions.each do |contribution| %>
+    <li>
+      <p><%= contribution.content %></p>
+      <p><strong> from <%= contribution.contributor_name %></strong></p>
+    </li>
+    <hr>
+  <% end %>
+</ul>

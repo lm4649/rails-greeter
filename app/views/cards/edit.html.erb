@@ -1,2 +1,12 @@
-<h1>Cards#edit</h1>
-<p>Find me in app/views/cards/edit.html.erb</p>
+<h1>Edit the card for <%= @card.title %></h1>
+<%= simple_form_for @card do |f| %>
+  <%= f.input :event_date, html5: true, label: "what's the event's date" %>
+  <%= f.input :description, as: :text, label: "For who, for what occasion?" %>
+  <%= f.submit %>
+<%end %>
+<br>
+<h3><%= link_to "share this with your friends", card_path(@card)  %></h3>
+<hr>
+<% if @manager_contribution.nil? %>
+  <%= link_to "add your contribution", card_path(@card)  %>
+<% end %>

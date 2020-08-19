@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_030708) do
+ActiveRecord::Schema.define(version: 2020_08_19_034949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,10 +31,10 @@ ActiveRecord::Schema.define(version: 2020_08_18_030708) do
     t.string "contributor_name"
     t.text "content"
     t.bigint "card_id", null: false
-    t.bigint "user_id", null: false
     t.boolean "rejected", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
     t.index ["card_id"], name: "index_contributions_on_card_id"
     t.index ["user_id"], name: "index_contributions_on_user_id"
   end
