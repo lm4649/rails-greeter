@@ -8,4 +8,5 @@ class Card < ApplicationRecord
   def event_date_in_future
     errors.add(:event_date, 'event date must be in the future') if Date.today > event_date
   end
+
 end
