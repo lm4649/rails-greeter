@@ -6,3 +6,7 @@
 <%end %>
 <br>
 <h3><%= link_to "share this with your friends", card_path(@card)  %></h3>
+<hr>
+<% if @manager_contribution.nil? %>
+  <%= link_to "add your contribution", card_path(@card)  %>
+<% end %>
