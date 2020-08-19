@@ -1,0 +1,6 @@
+<%= simple_form_for(@card) do |f| %>
+  <%= f.input :title %>
+  <%= f.button :submit,  class: "btn-primary" %>
+  <%= f.input :date %>
+  <%= f.button :button, "Invite", type: "reset", class: "btn-outline-secondary" %>
+<% end %>
