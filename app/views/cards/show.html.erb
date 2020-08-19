@@ -1,2 +1,11 @@
-<h1>Cards#show</h1>
-<p>Find me in app/views/cards/show.html.erb</p>
+<p>card created by <%= @card.user.email %></p>
+<h1><%= @card.title %>, <small><%= @card.event_date%></small></h1>
+<p>description: <%= @card.description %></p>
+<br>
+<%= link_to "edit", edit_card_path(@card) %>
+<hr>
+<% if user_signed_in? && current_user == @card.user %>
+  <%= render "cards/partials/show_all" %>
+<% else %>
+  <%= render "cards/partials/contribution_form" %>
+<% end %>

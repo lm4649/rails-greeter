@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:edit, :update, :show]
+  skip_before_action :authenticate_user!, only: :show
   def new
     @card = Card.new
   end
@@ -29,6 +30,7 @@ class CardsController < ApplicationController
 
   def show
     # @card = Card.find(params[:id])
+    @contribution = Contribution.new
   end
 
   private
