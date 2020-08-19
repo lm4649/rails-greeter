@@ -6,6 +6,11 @@
       <p><%= contribution.content %></p>
       <p><strong> from <%= contribution.contributor_name %></strong></p>
     </li>
+    <% if contribution.rejected? %>
+      <p>rejected</p>
+    <% else %>
+      <%= link_to "reject", contribution_path(contribution, rejected: true), method: 'PATCH' %>
+    <% end %>
     <hr>
   <% end %>
 </ul>
