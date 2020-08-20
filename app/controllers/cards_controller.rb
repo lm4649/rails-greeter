@@ -36,6 +36,7 @@ class CardsController < ApplicationController
     @contribution = Contribution.new
     @manager_contribution = manager_contribution(@card)
     @external_contributions = @card.contributions.select { |contribution| contribution.user.nil? }
+    @curated_contributions = @card.contributions.reject { |contribution| contribution.rejected? }
   end
 
   private

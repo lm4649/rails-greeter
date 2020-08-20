@@ -1,0 +1,29 @@
+<div class="glide">
+  <!-- glide.js controller -->
+  <div class="glide__arrows" data-glide-el="controls">
+    <button class="glide__arrow glide__arrow--left text-primary" data-glide-dir="<">prev</button>
+    <button class="glide__arrow glide__arrow--right text-primary" data-glide-dir=">">next</button>
+  </div>
+  <!-- glide.js carousel -->
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <% @external_contributions.each do |contribution| %>
+        <li class="glide__slide">
+          <!-- contribution cards -->
+          <div class="contribution-card">
+            <p><%= contribution.content %></p>
+            <div class="contribution-card-footer">
+              <p><strong> from <%= contribution.contributor_name %></strong></p>
+              <% if contribution.rejected? %>
+                <p>rejected</p>
+              <% else %>
+                <!-- ability to reject a contribution -->
+                <%= link_to "reject", contribution_path(contribution, rejected: true), method: 'PATCH', class: "btn btn-sm btn-warning" %>
+              <% end %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
