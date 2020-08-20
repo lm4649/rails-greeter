@@ -1,0 +1,13 @@
+.contribution-card {
+  background-color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 400px;
+  padding: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3)
+}
+
+.contribution-card-footer {
+  display: flex;
+  justify-content : space-between
+}

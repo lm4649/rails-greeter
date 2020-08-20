@@ -4,14 +4,18 @@
   <ul>
     <% @external_contributions.each do |contribution| %>
       <li>
-        <p><%= contribution.content %></p>
-        <p><strong> from <%= contribution.contributor_name %></strong></p>
+        <div class="contribution-card">
+          <p><%= contribution.content %></p>
+          <div class="contribution-card-footer">
+            <p><strong> from <%= contribution.contributor_name %></strong></p>
+            <% if contribution.rejected? %>
+              <p>rejected</p>
+            <% else %>
+              <%= link_to "reject", contribution_path(contribution, rejected: true), method: 'PATCH', class: "btn btn-sm btn-warning" %>
+            <% end %>
+          </div>
+        </div>
       </li>
-      <% if contribution.rejected? %>
-        <p>rejected</p>
-      <% else %>
-        <%= link_to "reject", contribution_path(contribution, rejected: true), method: 'PATCH' %>
-      <% end %>
       <hr>
     <% end %>
   </ul>
