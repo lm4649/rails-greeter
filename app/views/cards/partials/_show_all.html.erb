@@ -1,5 +1,5 @@
 <div class="container bg-success mb-5" >
-  <h2 class= "text-primary"><%= @external_contributions.count %> contributions</h2>
+  <h2 class= "text-primary"><%= pluralize(@external_contributions.count, 'contribution') %></h2>
   <br>
   <!-- glide.js contribution card carousel -->
   <%= render 'cards/partials/cards_carousel' %>
