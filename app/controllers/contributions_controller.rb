@@ -1,4 +1,5 @@
 class ContributionsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :create
   def new
     @contribution = Contribution.new
   end
@@ -8,6 +9,7 @@ class ContributionsController < ApplicationController
     @contribution.user = current_user
     @card = Card.find(params[:card_id])
     @contribution.card = @card
+    @contribution.user = current_user if @card.user == current_user
     if @contribution.save
       redirect_to card_path(@card)
     else
@@ -17,8 +19,7 @@ class ContributionsController < ApplicationController
 
   def update
     @contribution = Contribution.find(params[:id])
-    @contribution.update(contribution_params)
-    # TO DO RAISE AN ALERT IF THE UPDATE FAILS
+    @contribution.update(rejected: params[:rejected])
     redirect_to card_path(@contribution.card)
   end
 

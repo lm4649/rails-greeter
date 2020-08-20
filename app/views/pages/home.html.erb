@@ -1,3 +1,4 @@
+
 <div class="banner-container">
   <div class="banner-content banner-show" style="background-image: url(<%= image_path "Slider1.jpg" %>)">
     <h1>"Never miss any moment"</h1>
@@ -12,3 +13,6 @@
     <p>On her birthday</p>
   </div>
 </div>
+
+<%= link_to 'Create a new card', new_card_path(@card), :class => "btn btn-success" %>
+
