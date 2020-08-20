@@ -1,5 +1,11 @@
-<%= simple_form_for(@card) do |f| %>
-  <%= f.input :title, placeholder:"What is the special moment" %>
-  <%= f.button :submit,  class: "btn-primary" %>
-  <%= f.button :button, "Invite", class: "btn-info" %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col col-sm-8">
+      <%= simple_form_for(@card) do |f| %>
+        <%= f.input :title %>
+        <%= f.button :submit,  class: "btn-primary" %>
+        <%= f.button :button, "Invite", class: "btn-info" %>
+      <% end %>
+    </div>
+  </div>
+</div>
