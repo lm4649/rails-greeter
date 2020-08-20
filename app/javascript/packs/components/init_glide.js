@@ -4,7 +4,13 @@ const initGlide = () => {
   const canGlide = document.querySelectorAll('.glide');
 
   if (canGlide) {
-    new Glide('.glide').mount();
+    const config = {
+      type: 'carousel',
+      startAt: 0,
+      perView: 4,
+      focusAt: 'center'
+    }
+    new Glide('.glide', config).mount();
   }
 }
 

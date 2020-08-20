@@ -1,8 +1,14 @@
 <div class="container bg-success" >
-  <h2>List of contributions</h2>
+  <h2 class= "text-primary"><%= @external_contributions.count %> contributions</h2>
   <br>
   <div class="glide">
-    <div data-glide-el="track" class="glide__track">
+    <!-- glide.js controller -->
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left text-primary" data-glide-dir="<">prev</button>
+      <button class="glide__arrow glide__arrow--right text-primary" data-glide-dir=">">next</button>
+    </div>
+    <!-- glide.js carousel -->
+    <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
         <% @external_contributions.each do |contribution| %>
           <li class="glide__slide">
