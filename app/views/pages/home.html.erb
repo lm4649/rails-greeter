@@ -1,3 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="banner-container">
+  <div class="banner-content banner-show" style="background-image: url(<%= image_path "Slider1.jpg" %>)">
+    <h1>"Never miss any moment"</h1>
+    <p>On their anniversary</p>
+  </div>
+  <div class="banner-content" style="background-image: url(<%= image_path "Slider2.jpg" %>)">
+    <h1>"Never miss any moment"</h1>
+    <p>On his promotion</p>
+  </div>
+  <div class="banner-content" style="background-image: url(<%= image_path "Slider3.jpg" %>)">
+    <h1>"Never miss any moment"</h1>
+    <p>On her birthday</p>
+  </div>
+</div>
+
 <%= link_to 'Create a new card', new_card_path(@card), :class => "btn btn-success" %>
+
