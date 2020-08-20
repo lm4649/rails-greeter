@@ -11,3 +11,12 @@
   display: flex;
   justify-content : space-between
 }
+
+
+.card-project {
+  width: 1110px;
+  height: 830px;
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url("cardproject.jpg");
+  background-size: cover
+
+}

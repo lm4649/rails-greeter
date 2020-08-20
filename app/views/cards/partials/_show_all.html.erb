@@ -12,6 +12,7 @@
       <ul class="glide__slides">
         <% @external_contributions.each do |contribution| %>
           <li class="glide__slide">
+            <!-- contribution cards -->
             <div class="contribution-card">
               <p><%= contribution.content %></p>
               <div class="contribution-card-footer">
@@ -19,6 +20,7 @@
                 <% if contribution.rejected? %>
                   <p>rejected</p>
                 <% else %>
+                  <!-- ability to reject a contribution -->
                   <%= link_to "reject", contribution_path(contribution, rejected: true), method: 'PATCH', class: "btn btn-sm btn-warning" %>
                 <% end %>
               </div>
@@ -28,5 +30,8 @@
         <% end %>
       </ul>
     </div>
+  </div>
+  <!-- card project -->
+  <div class="card-project">
   </div>
 </div>
