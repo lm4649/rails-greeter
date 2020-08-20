@@ -1,22 +1,26 @@
 <div class="container bg-success" >
   <h2>List of contributions</h2>
   <br>
-  <ul>
-    <% @external_contributions.each do |contribution| %>
-      <li>
-        <div class="contribution-card">
-          <p><%= contribution.content %></p>
-          <div class="contribution-card-footer">
-            <p><strong> from <%= contribution.contributor_name %></strong></p>
-            <% if contribution.rejected? %>
-              <p>rejected</p>
-            <% else %>
-              <%= link_to "reject", contribution_path(contribution, rejected: true), method: 'PATCH', class: "btn btn-sm btn-warning" %>
-            <% end %>
-          </div>
-        </div>
-      </li>
-      <hr>
-    <% end %>
-  </ul>
+  <div class="glide">
+    <div data-glide-el="track" class="glide__track">
+      <ul class="glide__slides">
+        <% @external_contributions.each do |contribution| %>
+          <li class="glide__slide">
+            <div class="contribution-card">
+              <p><%= contribution.content %></p>
+              <div class="contribution-card-footer">
+                <p><strong> from <%= contribution.contributor_name %></strong></p>
+                <% if contribution.rejected? %>
+                  <p>rejected</p>
+                <% else %>
+                  <%= link_to "reject", contribution_path(contribution, rejected: true), method: 'PATCH', class: "btn btn-sm btn-warning" %>
+                <% end %>
+              </div>
+            </div>
+          </li>
+          <hr>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
