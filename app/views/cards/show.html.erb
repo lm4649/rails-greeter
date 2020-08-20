@@ -1,10 +1,12 @@
 <!-- main info about the card -->
 <!-- manager, title, date, description -->
 <p>card created by <%= @card.user.email %></p>
-<h1><%= @card.title %>, <small><%= @card.event_date%></small></h1>
-<p>description: <%= @card.description %></p>
-<br>
-<%= link_to "edit", edit_card_path(@card) %>
+<div class="container">
+  <h1><%= @card.title %>, <small><%= @card.event_date%></small></h1>
+  <p>description: <%= @card.description %></p>
+  <%= link_to "edit your card", edit_card_path(@card), class: 'btn btn-sm btn-success align-items-center' %>
+  <br>
+</div>
 <hr>
 <!-- Manager contribution displayed here or the form to add contribution-->
 <% if user_signed_in? && current_user == @card.user %>

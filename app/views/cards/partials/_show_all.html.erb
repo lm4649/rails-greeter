@@ -1,16 +1,18 @@
-<h2>List of contributions</h2>
-<br>
-<ul>
-  <% @external_contributions.each do |contribution| %>
-    <li>
-      <p><%= contribution.content %></p>
-      <p><strong> from <%= contribution.contributor_name %></strong></p>
-    </li>
-    <% if contribution.rejected? %>
-      <p>rejected</p>
-    <% else %>
-      <%= link_to "reject", contribution_path(contribution, rejected: true), method: 'PATCH' %>
+<div class="container bg-success" >
+  <h2>List of contributions</h2>
+  <br>
+  <ul>
+    <% @external_contributions.each do |contribution| %>
+      <li>
+        <p><%= contribution.content %></p>
+        <p><strong> from <%= contribution.contributor_name %></strong></p>
+      </li>
+      <% if contribution.rejected? %>
+        <p>rejected</p>
+      <% else %>
+        <%= link_to "reject", contribution_path(contribution, rejected: true), method: 'PATCH' %>
+      <% end %>
+      <hr>
     <% end %>
-    <hr>
-  <% end %>
-</ul>
+  </ul>
+</div>
