@@ -1,7 +1,7 @@
 import Glide from '@glidejs/glide'
 
 const initGlide = () => {
-  const canGlide = document.querySelectorAll('.glide');
+  const canGlide = document.querySelector('.glide');
 
   if (canGlide) {
     const config = {
