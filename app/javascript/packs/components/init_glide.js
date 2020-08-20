@@ -6,9 +6,9 @@ const initGlide = () => {
   if (canGlide) {
     const config = {
       type: 'carousel',
+      // focusAt: 'center'
       startAt: 0,
       perView: 4,
-      focusAt: 'center'
     }
     new Glide('.glide', config).mount();
   }
