@@ -1,18 +1,14 @@
-
 <div class="banner-container">
-  <div class="banner-content banner-show" style="background-image: url(<%= image_path "Slider1.jpg" %>)">
-    <h1>"Never miss any moment"</h1>
-    <p>On their anniversary</p>
+  <div class="banner-content banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= image_path "Slider1.jpg" %>)">
+    <h1>Never miss a moment</h1>
+    <%= link_to 'Create a new card', new_card_path(@card), :class => "btn btn-success" %>
   </div>
-  <div class="banner-content" style="background-image: url(<%= image_path "Slider2.jpg" %>)">
-    <h1>"Never miss any moment"</h1>
-    <p>On his promotion</p>
+  <div class="banner-content" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= image_path "Slider2.jpg" %>)">
+    <h1>Never miss a moment</h1>
+    <%= link_to 'Create a new card', new_card_path(@card), :class => "btn btn-success" %>
   </div>
-  <div class="banner-content" style="background-image: url(<%= image_path "Slider3.jpg" %>)">
-    <h1>"Never miss any moment"</h1>
-    <p>On her birthday</p>
+  <div class="banner-content" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= image_path "Slider3.jpg" %>)">
+    <h1>Never miss a moment</h1>
+    <%= link_to 'Create a new card', new_card_path(@card), :class => "btn btn-success" %>
   </div>
 </div>
-
-<%= link_to 'Create a new card', new_card_path(@card), :class => "btn btn-success" %>
-
