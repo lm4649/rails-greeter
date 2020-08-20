@@ -1,0 +1,17 @@
+.banner-container {
+
+}
+
+.banner-content {
+  visibility: hidden;
+  opacity: 0;
+  height: 0px;
+  background-size: cover;
+  transition: opacity 1s;
+}
+
+.banner-content.banner-show {
+  height: 75.8vh;
+  visibility: visible;
+  opacity: 1;
+}
