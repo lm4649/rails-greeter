@@ -1,4 +1,4 @@
-<div class="glide">
+<div class="glide" id="glide-anchor">
   <!-- glide.js controller -->
   <div class="glide__arrows" data-glide-el="controls">
     <button class="glide__arrow glide__arrow--left text-primary" data-glide-dir="<"><i class="fas fa-arrow-circle-left"></i></button>
@@ -18,7 +18,7 @@
                 <p>rejected</p>
               <% else %>
                 <!-- ability to reject a contribution -->
-                <%= link_to "reject", contribution_path(contribution, rejected: true), method: 'PATCH', class: "btn btn-sm btn-warning" %>
+                <%= link_to "reject", contribution_path(contribution, rejected: true), method: 'PATCH', remote: true,  class: "btn btn-sm btn-warning" %>
               <% end %>
             </div>
           </div>

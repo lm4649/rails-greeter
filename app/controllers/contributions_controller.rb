@@ -20,7 +20,7 @@ class ContributionsController < ApplicationController
   def update
     @contribution = Contribution.find(params[:id])
     @contribution.update(rejected: params[:rejected])
-    redirect_to card_path(@contribution.card)
+    redirect_to card_path(@contribution.card, anchor: "glide-anchor")
   end
 
   private
