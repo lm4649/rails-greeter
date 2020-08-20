@@ -19,8 +19,7 @@ class ContributionsController < ApplicationController
 
   def update
     @contribution = Contribution.find(params[:id])
-    @contribution.update(contribution_params)
-    # TO DO RAISE AN ALERT IF THE UPDATE FAILS
+    @contribution.update(rejected: params[:rejected])
     redirect_to card_path(@contribution.card)
   end
 
