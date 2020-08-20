@@ -10,6 +10,18 @@
   transition: opacity 1s;
 }
 
+.banner-content h1 {
+  text-align: right;
+  padding-top: 25px;
+  padding-right: 15px;
+}
+
+.banner-content p {
+  text-align: right;
+  padding-right: 25px;
+
+}
+
 .banner-content.banner-show {
   height: 75.8vh;
   visibility: visible;
