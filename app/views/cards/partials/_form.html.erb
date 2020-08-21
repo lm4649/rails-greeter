@@ -1,8 +1,8 @@
 <div class="container">
-  <%= simple_form_for(@card) do |f| %>
-    <%= f.input :title, placeholder:"What is the special moment" %>
-    <%= f.button :submit,  class: "btn-primary" %>
-    <%= f.button :button, "Invite", class: "btn-info" %>
-  <% end %>
-  <hr>
+  <div class="display-flex mt5">
+    <%= simple_form_for(@card) do |f| %>
+      <%= f.input :title %>
+      <%= f.button :submit,  class: "btn-primary" %>
+    <% end %>
+  </div>
 </div>
