@@ -1,8 +1,8 @@
 <div class="container bg-success mb-5" >
-  <h2 class= "text-primary"><%= pluralize(@external_contributions.count, 'contribution') %></h2>
+  <h2 class= "text-primary"><%= pluralize(@contributions.count, 'contribution') %></h2>
   <br>
   <!-- glide.js contribution card carousel -->
-  <%= render 'cards/partials/cards_carousel' if @external_contributions.any? %>
+  <%= render 'cards/partials/cards_carousel' if @contributions.any? %>
   <!-- card project -->
   <%= render 'cards/partials/card_project_body' %>
   <!-- card project footer -->
