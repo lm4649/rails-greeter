@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
-  before_action :set_card, only: [:edit, :update, :show, :preview]
-  skip_before_action :authenticate_user!, only: :show
+  before_action :set_card, only: [:edit, :update, :show, :preview, :send_card]
+  skip_before_action :authenticate_user!, only: [:show, :preview]
 
   def new
     @card = Card.new
@@ -45,6 +45,11 @@ class CardsController < ApplicationController
     @curated_contributions = @card.contributions.reject { |contribution| contribution.rejected? }
   end
 
+  def send_card
+    CardMailer.with(card: @card).final_card.deliver_now
+    redirect_to card_preview_path(@card)
+  end
+
   private
 
   def manager_contribution(card)
@@ -57,6 +62,6 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:title, :recipient, :event_date, :description, :draft, :preview)
+    params.require(:card).permit(:title, :recipient, :recipient_email, :event_date, :description, :draft, :preview)
   end
 end
