@@ -6,15 +6,15 @@
         <%= f.input :recipient %>
         <%= f.input :recipient_email %>
         <%= f.input :event_date, html5: true, label: "What's the event's date" %>
-        <%= f.input :description, as: :text, label: "For who, for what occasion?" %>
+        <%= f.input :description, as: :text, label: "Instructions", placeholder: "Add a video of you dancing to 'Stayin Alive'" %>
         <%= f.submit "Next", :class => "btn btn-info"%>
       <%end %>
       <br>
-      <!--<h6><%= button_to "Share this with your friends", card_path(@card), :class => "btn btn-primary" %></h6>-->
-      <!--<hr>
-      <% if @manager_contribution.nil? %>
-        <%= link_to "Add your contribution", card_path(@card) , :class => "btn btn-primary" %>
-      <% end %>-->
+      <!-- <h6><%#= button_to "Share this with your friends", card_path(@card), :class => "btn btn-primary" %></h6>
+          <hr> -->
+      <%# if @manager_contribution.nil? %>
+      <%#= link_to "Add your contribution", card_path(@card) , :class => "btn btn-primary" %>
+      <%# end %>
     </div>
   </div>
 </div>
