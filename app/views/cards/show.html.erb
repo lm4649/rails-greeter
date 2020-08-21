@@ -12,8 +12,8 @@
   </div>
   <p class= "text-center"><%= @card.event_date%></p>
   <p class ="text-center"><%= @card.description %></p>
-  <br>
-  <hr>
+  <!-- <br>
+  <hr> -->
 </div>
 <!-- Manager contribution displayed here or the form to add contribution-->
 <% if user_signed_in? && current_user == @card.user && @manager_contribution.nil?  %>
