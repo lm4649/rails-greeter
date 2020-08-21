@@ -18,7 +18,9 @@
                 <p>rejected</p>
               <% else %>
                 <!-- ability to reject a contribution -->
-                <%= link_to "reject", contribution_path(contribution, rejected: true), method: 'PATCH', remote: true,  class: "btn btn-sm btn-warning" %>
+                <%= link_to contribution_path(contribution, rejected: true), method: 'PATCH', remote: true,  class: "btn btn-sm btn-outline-primary d-flex align-items-center" do %>
+                  <i class="fas fa-ban"></i>
+                <% end %>
               <% end %>
             </div>
           </div>
