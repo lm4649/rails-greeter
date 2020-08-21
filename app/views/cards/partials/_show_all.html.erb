@@ -1,5 +1,13 @@
 <div class="container bg-success mb-5" >
-  <h2 class= "text-primary"><%= pluralize(@contributions.count, 'contribution') %></h2>
+  <div class="d-flex justify-content-between">
+    <h2 class= "text-primary"><%= pluralize(@contributions.count, 'contribution') %></h2>
+    <!-- The text field -->
+    <div>
+      <input type="text" value='<%= request.original_url%>' id="myInput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+      <!-- The button used to copy the text -->
+      <button onclick="myFunction()" class="btn btn-sm btn-primary">share</button>
+    </div>
+  </div>
   <br>
   <!-- glide.js contribution card carousel -->
   <%= render 'cards/partials/cards_carousel' if @contributions.any? %>
