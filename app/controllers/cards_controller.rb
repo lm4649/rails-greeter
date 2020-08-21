@@ -35,7 +35,8 @@ class CardsController < ApplicationController
     # @card = Card.find(params[:id])
     @contribution = Contribution.new
     @manager_contribution = manager_contribution(@card)
-    @external_contributions = @card.contributions.select { |contribution| contribution.user.nil? }
+    # @external_contributions = @card.contributions.select { |contribution| contribution.user.nil? }
+    @contributions = @card.contributions
     @curated_contributions = @card.contributions.reject { |contribution| contribution.rejected? }
   end
 

@@ -1,22 +1,23 @@
 <!-- main info about the card -->
 <!-- manager, title, date, description -->
-<p>card created by <%= @card.user.email %></p>
+<!-- <p>card created by <%= @card.user.email %></p>-->
 <div class="container">
-  <h1><%= @card.title %>, <small><%= @card.event_date%></small></h1>
-  <p>description: <%= @card.description %></p>
-  <% if user_signed_in? && current_user == @card.user %>
-    <%= link_to "edit your card", edit_card_path(@card), class: 'btn btn-sm btn-success align-items-center' %>
-  <% end %>
-  <br>
-  <hr>
+  <div class="d-flex justify-content-center">
+    <h1><%= @card.title %></h1>
+    <% if user_signed_in? && current_user == @card.user %>
+      <%= link_to edit_card_path(@card), class: 'btn btn-sm btn-succes align-items-center' do %>
+        <i class="far fa-edit"></i>
+      <% end %>
+    <% end %>
+  </div>
+  <p class= "text-center"><%= @card.event_date%></p>
+  <p class ="text-center"><%= @card.description %></p>
+  <!-- <br>
+  <hr> -->
 </div>
 <!-- Manager contribution displayed here or the form to add contribution-->
-<% if user_signed_in? && current_user == @card.user %>
-  <% if @manager_contribution.nil?  %>
-    <%= render "cards/partials/contribution_form"  %>
-  <% else %>
-    <%= render "cards/partials/manager_contribution" %>
-  <% end %>
+<% if user_signed_in? && current_user == @card.user && @manager_contribution.nil?  %>
+  <%= render "cards/partials/contribution_form"  %>
 <% end %>
 <!-- rendering list of contributions for the manager or the contributions form for the contributors -->
 <% if user_signed_in? && current_user == @card.user %>
@@ -24,3 +25,20 @@
 <% else %>
   <%= render "cards/partials/contribution_form" %>
 <% end %>
+<!-- TO DO : put it in a js file -->
+<script>
+  function myFunction() {
+    /* Get the text field */
+    var copyText = document.getElementById("myInput");
+  
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+  
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+  
+    /* Alert the copied text */
+    alert("share this link " + copyText.value);
+  }
+</script>
