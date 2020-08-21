@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   end
   resources :contributions, only: :update
   get '/dashboard', to:'users#dashboard'
+
+  resources :cards, only: :show
+  get '/cards/:id/preview', to: "cards#preview", as: :card_preview
 end

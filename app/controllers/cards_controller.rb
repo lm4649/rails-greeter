@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :set_card, only: [:edit, :update, :show]
+  before_action :set_card, only: [:edit, :update, :show, :preview]
   skip_before_action :authenticate_user!, only: :show
 
   def new
@@ -38,6 +38,10 @@ class CardsController < ApplicationController
     @external_contributions = @card.contributions.select { |contribution| contribution.user.nil? }
   end
 
+  def preview
+
+  end
+
   private
 
   def manager_contribution(card)
@@ -50,6 +54,6 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:title, :recipient, :event_date, :description, :draft)
+    params.require(:card).permit(:title, :recipient, :event_date, :description, :draft, :preview)
   end
 end
