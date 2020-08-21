@@ -16,12 +16,8 @@
   <hr>
 </div>
 <!-- Manager contribution displayed here or the form to add contribution-->
-<% if user_signed_in? && current_user == @card.user %>
-  <% if @manager_contribution.nil?  %>
-    <%= render "cards/partials/contribution_form"  %>
-  <% else %>
-    <%= render "cards/partials/manager_contribution" %>
-  <% end %>
+<% if user_signed_in? && current_user == @card.user && @manager_contribution.nil?  %>
+  <%= render "cards/partials/contribution_form"  %>
 <% end %>
 <!-- rendering list of contributions for the manager or the contributions form for the contributors -->
 <% if user_signed_in? && current_user == @card.user %>
