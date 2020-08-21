@@ -2,13 +2,16 @@
 <!-- manager, title, date, description -->
 <p>card created by <%= @card.user.email %></p>
 <div class="container">
-  <h1><%= @card.title %>, <small><%= @card.event_date%></small></h1>
-  <p>description: <%= @card.description %></p>
-  <% if user_signed_in? && current_user == @card.user %>
-    <%= link_to edit_card_path(@card), class: 'btn btn-sm btn-succes align-items-center' do %>
-      <i class="far fa-edit"></i>
+  <div class="d-flex justify-content-center">
+    <h1><%= @card.title %></h1>
+    <% if user_signed_in? && current_user == @card.user %>
+      <%= link_to edit_card_path(@card), class: 'btn btn-sm btn-succes align-items-center' do %>
+        <i class="far fa-edit"></i>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+  <p class= "text-center"><%= @card.event_date%></p>
+  <p class ="text-center"><%= @card.description %></p>
   <br>
   <hr>
 </div>
