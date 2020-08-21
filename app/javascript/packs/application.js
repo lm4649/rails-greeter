@@ -31,10 +31,16 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initBanner} from './components/banner';
 import { initGlide } from './components/init_glide';
+import { simpleTrigger } from './components/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  simpleTrigger('#sweet-alert-success', {
+  title: "Thank you for your contribution",
+  text: "You will receive the link to the card when its finalized",
+  icon: "success"
+});
   initGlide();
   initBanner();
 });

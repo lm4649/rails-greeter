@@ -11,6 +11,7 @@ class ContributionsController < ApplicationController
     @contribution.card = @card
     @contribution.user = current_user if @card.user == current_user
     if @contribution.save
+      sleep(3) unless @contribution.user
       redirect_to card_path(@card)
     else
       render :new
