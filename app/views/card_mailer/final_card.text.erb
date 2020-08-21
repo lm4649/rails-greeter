@@ -1,3 +1,2 @@
-Card#final_card
-
-<%= @greeting %>, find me in app/views/card_mailer/final_card.text.erb
+Hi <%= @card.recipient %>, you just received a card :)
+<%= link_to "Click here", card_preview_url(@card) %> to view it!

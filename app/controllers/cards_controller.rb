@@ -47,6 +47,7 @@ class CardsController < ApplicationController
 
   def send_card
     CardMailer.with(card: @card).final_card.deliver_now
+    redirect_to card_preview_path(@card)
   end
 
   private
