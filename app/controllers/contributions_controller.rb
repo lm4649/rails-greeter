@@ -11,6 +11,7 @@ class ContributionsController < ApplicationController
     @contribution.card = @card
     @contribution.user = current_user if @card.user == current_user
     if @contribution.save
+      sleep(3) unless @contribution.user
       redirect_to card_path(@card)
     else
       render :new
@@ -20,7 +21,7 @@ class ContributionsController < ApplicationController
   def update
     @contribution = Contribution.find(params[:id])
     @contribution.update(rejected: params[:rejected])
-    redirect_to card_path(@contribution.card)
+    redirect_to card_path(@contribution.card, anchor: "glide-anchor")
   end
 
   private
