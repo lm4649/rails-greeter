@@ -3,6 +3,8 @@
     <div class="col col-sm-8">
       <h1><%= @card.title %></h1>
       <%= simple_form_for @card do |f| %>
+        <%= f.input :recipient %>
+        <%= f.input :recipient_email %>
         <%= f.input :event_date, html5: true, label: "What's the event's date" %>
         <%= f.input :description, as: :text, label: "For who, for what occasion?" %>
         <%= f.submit "Next", :class => "btn btn-info"%>
