@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   resources :cards, only: :show
   get '/cards/:id/preview', to: "cards#preview", as: :card_preview
+  get '/cards/:id/send', to: "cards#send_card", as: :send_card
+
 end
