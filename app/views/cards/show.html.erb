@@ -5,7 +5,9 @@
   <h1><%= @card.title %>, <small><%= @card.event_date%></small></h1>
   <p>description: <%= @card.description %></p>
   <% if user_signed_in? && current_user == @card.user %>
-    <%= link_to "edit your card", edit_card_path(@card), class: 'btn btn-sm btn-success align-items-center' %>
+    <%= link_to edit_card_path(@card), class: 'btn btn-sm btn-succes align-items-center' do %>
+      <i class="far fa-edit"></i>
+    <% end %>
   <% end %>
   <br>
   <hr>
