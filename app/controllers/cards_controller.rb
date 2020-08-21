@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :set_card, only: [:edit, :update, :show]
+  before_action :set_card, only: [:edit, :update, :show, :preview]
   skip_before_action :authenticate_user!, only: :show
 
   def new
@@ -40,6 +40,11 @@ class CardsController < ApplicationController
     @curated_contributions = @card.contributions.reject { |contribution| contribution.rejected? }
   end
 
+  def preview
+    @external_contributions = @card.contributions.select { |contribution| contribution.user.nil? }
+    @curated_contributions = @card.contributions.reject { |contribution| contribution.rejected? }
+  end
+
   private
 
   def manager_contribution(card)
@@ -52,6 +57,6 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:title, :recipient, :event_date, :description, :draft)
+    params.require(:card).permit(:title, :recipient, :event_date, :description, :draft, :preview)
   end
 end
