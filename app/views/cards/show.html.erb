@@ -4,7 +4,9 @@
 <div class="container">
   <h1><%= @card.title %>, <small><%= @card.event_date%></small></h1>
   <p>description: <%= @card.description %></p>
-  <%= link_to "edit your card", edit_card_path(@card), class: 'btn btn-sm btn-success align-items-center' %>
+  <% if user_signed_in? && current_user == @card.user %>
+    <%= link_to "edit your card", edit_card_path(@card), class: 'btn btn-sm btn-success align-items-center' %>
+  <% end %>
   <br>
   <hr>
 </div>
