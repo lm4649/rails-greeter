@@ -10,13 +10,21 @@
   opacity: 0;
   background-size: cover;
   text-align: right;
-  padding-right: 36px;
+  padding-right: 70px;
   transition: opacity 3s ease-out;
+  color: floralwhite;
 
   h1 {
-    padding-top: 25px;
+    padding-top: 120px;
     color: floralwhite;
     text-shadow: 1px 1px 1px mediumpurple;
+
+
+  p {
+    color: floralwhite;
+    font-size: 16px;
+    padding-right: 50px;
+  }
   }
 }
 
