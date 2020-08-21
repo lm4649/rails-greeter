@@ -40,7 +40,8 @@ class CardsController < ApplicationController
   end
 
   def preview
-
+    @external_contributions = @card.contributions.select { |contribution| contribution.user.nil? }
+    @curated_contributions = @card.contributions.reject { |contribution| contribution.rejected? }
   end
 
   private
