@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:edit, :update, :show, :preview]
-  skip_before_action :authenticate_user!, only: :show
+  skip_before_action :authenticate_user!, only: [:show, :preview]
 
   def new
     @card = Card.new
@@ -43,6 +43,7 @@ class CardsController < ApplicationController
   def preview
     @contributions = @card.contributions
     @curated_contributions = @card.contributions.reject { |contribution| contribution.rejected? }
+    UserMailer.with(card: @card).final_card.deliver_now
   end
 
   private
