@@ -1,4 +1,5 @@
 import { Controller } from "stimulus";
+import { simpleTrigger } from '../packs/components/init_sweetalert';
 
 export default class extends Controller {
   static targets = ['link'];
@@ -6,9 +7,9 @@ export default class extends Controller {
     console.log(this.linkTarget.value); // debug
   }
 
+  // copy the url in the clipboard
   copy(event) {
-    // copy the url in the clipboard
-    /* Get the text field */
+     /* Get the text field */
     var copyText = this.linkTarget;
 
     /* Select the text field */
@@ -19,8 +20,12 @@ export default class extends Controller {
     document.execCommand("copy");
 
     /* Alert the copied text */
-    alert("share this link " + copyText.value);
-
+    // alert("share this link " + copyText.value);
+      simpleTrigger('#sweet-share', {
+  title: "Link copied",
+  text: "share it with your relatives so as they contribute to the card",
+  icon: "success"
+});
   }
 
 }
