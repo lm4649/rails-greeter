@@ -1,5 +1,6 @@
 <div data-controller = "share">
-  <input data-target = "share.link" type="hidden" value='<%= request.original_url%>' aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+  <!-- BEwARE! INPUT FIELD SET TO DISPLAY: NONE! -->
+  <input data-target = "share.link" type="text" value='<%= request.original_url%>' aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="display:none;">
   <!-- The button used to copy the text -->
   <button data-action="click->share#copy" class="btn btn-sm btn-primary">share</button>
 </div>

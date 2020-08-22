@@ -3,20 +3,13 @@ import { Controller } from "stimulus";
 export default class extends Controller {
   static targets = ['link'];
   connect() {
-    console.log(this.linkTarget.value);
+    console.log(this.linkTarget.value); // debug
   }
 
   copy(event) {
-
-  }
-
-}
-
-<!-- TO DO : put it in a js file -->
-<script>
-  function myFunction() {
+    // copy the url in the clipboard
     /* Get the text field */
-    var copyText = document.getElementById("myInput");
+    var copyText = this.linkTarget;
 
     /* Select the text field */
     copyText.select();
@@ -27,5 +20,7 @@ export default class extends Controller {
 
     /* Alert the copied text */
     alert("share this link " + copyText.value);
+
   }
-</script>
+
+}
