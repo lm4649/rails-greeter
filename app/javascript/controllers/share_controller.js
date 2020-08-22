@@ -1,5 +1,4 @@
 import { Controller } from "stimulus";
-import { simpleTrigger } from '../packs/components/init_sweetalert';
 
 export default class extends Controller {
   static targets = ['link'];
@@ -18,14 +17,11 @@ export default class extends Controller {
 
     /* Copy the text inside the text field */
     document.execCommand("copy");
+    event.currentTarget.title = "Link copied";
 
-    /* Alert the copied text */
-    // alert("share this link " + copyText.value);
-      simpleTrigger('#sweet-share', {
-  title: "Link copied",
-  text: "share it with your relatives so as they contribute to the card",
-  icon: "success"
-});
+        /* Alert the copied text */
+  // alert("share this link " + copyText.value);
+
   }
 
 }

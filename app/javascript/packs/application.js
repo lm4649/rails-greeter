@@ -36,11 +36,22 @@ import { simpleTrigger } from './components/init_sweetalert';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
+  // sweet alert for successful contribution
   simpleTrigger('#sweet-alert-success', {
   title: "Thank you for your contribution",
   text: "You will receive the link to the card when its finalized",
   icon: "success"
 });
+
+// sweet aler for successful share link copy
+  simpleTrigger('#sweet-share', {
+      title: "Link copied",
+      text: "share it with your relatives so as they contribute to the card",
+      icon: "success"
+    });
+
+
   initGlide();
   initBanner();
 });
