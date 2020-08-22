@@ -2,10 +2,12 @@
   <div class="d-flex justify-content-between">
     <h2 class= "text-primary"><%= pluralize(@contributions.count, 'contribution') %></h2>
     <!-- The text field -->
-    <div>
+    <div class = "d-flex">
       <input type="text" value='<%= request.original_url%>' id="myInput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
       <!-- The button used to copy the text -->
-      <button onclick="myFunction()" class="btn btn-sm btn-primary">share</button>
+      <button onclick="myFunction()" class="btn btn-sm btn-primary mr-1">share</button>
+      <!-- social share buttons -->
+      <%= social_share_button_tag(@card.title, url: request.original_url, desc: @card.description) %>
     </div>
   </div>
   <br>
