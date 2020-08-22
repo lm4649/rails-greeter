@@ -1,5 +1,5 @@
-<div>
-  <input type="text" value='<%= request.original_url%>' id="myInput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+<div data-controller = "share">
+  <input data-target = "share.link" type="hidden" value='<%= request.original_url%>' aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
   <!-- The button used to copy the text -->
-  <button onclick="myFunction()" class="btn btn-sm btn-primary">share</button>
+  <button data-action="click->share#copy" class="btn btn-sm btn-primary">share</button>
 </div>
