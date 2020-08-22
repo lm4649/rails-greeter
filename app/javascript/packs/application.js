@@ -25,6 +25,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "controllers"
 
 
 // Internal imports, e.g:
@@ -56,4 +57,3 @@ document.addEventListener('turbolinks:load', () => {
   initBanner();
 });
 
-import "controllers"
