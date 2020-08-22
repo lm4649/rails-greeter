@@ -44,3 +44,5 @@ document.addEventListener('turbolinks:load', () => {
   initGlide();
   initBanner();
 });
+
+import "controllers"

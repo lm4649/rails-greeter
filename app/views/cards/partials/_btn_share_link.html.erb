@@ -1,6 +1,5 @@
-     <!-- The text field -->
-<input type="text" value="Hello World" id="myInput">
-<!-- The button used to copy the text  ask TAs to help  -->
-<button onclick="myFunction()">Copy link</button>
-<!-- need to create the JSfunctions.
-and styling -->
+<div>
+  <input type="text" value='<%= request.original_url%>' id="myInput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+  <!-- The button used to copy the text -->
+  <button onclick="myFunction()" class="btn btn-sm btn-primary">share</button>
+</div>
