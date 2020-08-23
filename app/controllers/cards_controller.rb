@@ -47,10 +47,16 @@ class CardsController < ApplicationController
 
   def send_card
     CardMailer.with(card: @card).final_card.deliver_now
+    send_to_contributors
     redirect_to card_preview_path(@card)
   end
 
   private
+
+  def send_to_contributors
+    @filtered_contributions = card.contributions.reject { |contribution| contribution.rejected || contribution.contributor_email.nil? }
+    @filtered_contributions.each { |contribution| CardMailer.with(contribution: contribution).card_to_contributors.deliver_now }
+  end
 
   def manager_contribution(card)
     # return the manager contribution to the card or nill

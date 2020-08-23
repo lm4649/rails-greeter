@@ -9,4 +9,9 @@ class CardMailer < ApplicationMailer
     @card = params[:card]
     mail(to: @card.recipient_email, subject: "You got a Greet!")
   end
+
+  def card_to_contributors
+    @contribution = params[:contribution]
+    mail(to: @contribution.contributor_email, subject: "Greeter: #{@contribution.card.title}")
+  end
 end
