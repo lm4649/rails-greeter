@@ -36,11 +36,15 @@ import { simpleTrigger } from './components/init_sweetalert';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  simpleTrigger('#sweet-alert-success', {
-  title: "Thank you for your contribution",
-  text: "You will receive the link to the card when its finalized",
-  icon: "success"
+  const swalContrib = document.getElementById('sweet-alert-contribution');
+  if (swalContrib){
+    simpleTrigger('#sweet-alert-contribution', {
+  title: 'Thanks for contributing',
+  text: 'You will be redirected to the card preview',
+  icon: 'success'
 });
+  }
+
   initGlide();
   initBanner();
 });

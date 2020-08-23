@@ -6,7 +6,7 @@
     <%if user_signed_in? && current_user == @card.user %>
       <%= f.button :submit, class: 'btn btn-success'%>
     <% else %>
-      <%= f.button :submit, "Send your contribution", class: 'btn btn-success', id: 'sweet-alert-success'%>
+      <%= f.button :submit, "Send your contribution", class: 'btn btn-success', id:'sweet-alert-contribution'%>
     <% end %>
   <% end %>
 </div>
