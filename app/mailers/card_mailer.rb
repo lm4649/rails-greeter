@@ -12,6 +12,7 @@ class CardMailer < ApplicationMailer
 
   def card_to_contributors
     @contribution = params[:contribution]
-    mail(to: @contribution.contributor_email, subject: "Greeter: #{@contribution.card.title}")
+    email_with_name = %("#{@contribution.contributor_name}" <#{@contribution.contributor_email}>)
+    mail(to: email_with_name, subject: "Greeter: #{@contribution.card.title}")
   end
 end
