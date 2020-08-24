@@ -1,7 +1,6 @@
 <div class="container bg-success mb-5" >
   <div class="d-flex justify-content-between">
     <h2 class= "text-primary"><%= pluralize(contributions.count, 'contribution') %></h2>
-    <!-- The text field -->
     <div class = "d-flex">
       <!-- to share the link to enable other people to contribute to the card -->
       <%= render 'cards/partials/btn_share_link' %>

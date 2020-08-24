@@ -56,7 +56,7 @@ document.addEventListener('turbolinks:load', () => {
     });
 
   initGlide();
-  initBanner();
   photoSelect();
+  initBanner();
 });
 
