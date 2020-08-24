@@ -4,26 +4,28 @@
   <% else %>
     <div class="card-project" style= "background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(<%= image_url('templates/' + card.template)%>);">
     <% end %>
-    <% @curated_contributions.each do |contribution| %>
-      <% if contribution.photo.attached? %>
-        <%=render 'cards/partials/polaroid', contribution: contribution %>
-      <% else %>
-        <div class="contribution-mini-card" style= "transform: translateY(<%= rand(100) %>px) rotateZ(<%= rand(-1..1)*10 %>deg);">
-          <p><%= contribution.content %></p>
-          <strong><%= contribution.contributor_name %></strong>
-        </div>
+    <!-- polaroids on the left side -->
+    <div class="card-left" style="transform: rotateZ(-8deg);">
+      <% (0...4).each do |i| %>
+        <% contribution = @curated_contributions[i] %>
+        <%=render 'cards/partials/contributions_column', contribution: contribution %>
       <% end %>
-    <% end %>
+    </div>
+    <div class="card-center">
+      <h3><%= card.title %></h3>
+      <% if card.photo.attached? %>
+        <%= cl_image_tag card.photo.key, height: 200, width: 400, crop: :fill %>
+      <% end %>
+    </div>
+    <!-- polaroids on the right side -->
+    <div class="card-right" style="transform: rotateZ(3deg);">
+      <% (4...8).each do |i| %>
+        <% contribution = @curated_contributions[i] %>
+        <%=render 'cards/partials/contributions_column', contribution: contribution %>
+      <% end %>
+    </div>
     <!-- upload the main picture in the middle of the card -->
     <% unless card.photo.attached? %>
-      <!-- only the card manager can do it once -->
-      <%if user_signed_in? && current_user == @card.user %>
-        <div class="upload-container text-center">
-          <%= simple_form_for @card do |f| %>
-            <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo '}, label: ('<i class="fas fa-arrow-circle-up"></i>').html_safe%>
-            <%= f.button :submit, "upload picture", class: 'btn btn-sm btn-ouline-primary' %>
-          <% end %>
-        </div>
-      <% end %>
+      <%=render 'cards/partials/card_upload_main_picture'%>
     <% end %>
   </div>
