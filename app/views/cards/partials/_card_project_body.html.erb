@@ -6,4 +6,7 @@
       <%= cl_image_tag contribution.photo.key, height: 30, width: 40, crop: :fill %>
     </div>
   <% end %>
+  <%= simple_form_for @card do |f| %>
+    <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo '}, label: ('<i class="fas fa-arrow-circle-up"></i>').html_safe%>
+  <% end %>
 </div>
