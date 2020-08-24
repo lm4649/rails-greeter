@@ -5,6 +5,15 @@
 .chosen-template {
   margin-left: 16px;
   margin-top: 10px;
+  position: relative;
+}
+
+#card-title-preview {
+  text-shadow: 2px 2px 8px #FFF;
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  text-align: center;
 }
 
 .template {
