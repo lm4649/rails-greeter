@@ -25,7 +25,7 @@
   // width: 30%;
   display: inline-block;
   margin-top: 2rem;
-  filter: grayscale(100%);
+  filter: grayscale(70%);
 }
 .item .polaroid:before {
   content: '';
@@ -77,14 +77,14 @@
   transform: rotate(-4deg);
   height: 20%;
   width: 47%;
-  bottom: 30px;
+  bottom: 50px;
   left: 12px;
   box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.3);
 }
 .item:hover {
   filter: none;
-  transform: scale(1, 1) rotate(0deg) !important;
-  transition: all 0.35s;
+  transform: scale(2, 2) rotate(0deg) !important;
+  transition: all 1.4s;
 }
 .item:hover .polaroid:before {
   content: '';

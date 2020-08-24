@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="item">
-    <div class="polaroid"><img src="https://image.ibb.co/b8UJBc/administration_architecture_big_ben_221166.jpg">
+    <div class="polaroid"> <%= cl_image_tag contribution.photo.key, height: 100, width: 200, crop: :fill %>
       <div class="caption"><%= contribution.content %></div>
     </div>
   </div>
