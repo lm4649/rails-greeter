@@ -1,6 +1,6 @@
 <div class="container bg-success mb-5" >
   <div class="d-flex justify-content-between">
-    <h2 class= "text-primary"><%= pluralize(@contributions.count, 'contribution') %></h2>
+    <h2 class= "text-primary"><%= pluralize(contributions.count, 'contribution') %></h2>
     <!-- The text field -->
     <div class = "d-flex">
       <!-- to share the link to enable other people to contribute to the card -->
@@ -9,9 +9,9 @@
   </div>
   <br>
   <!-- glide.js contribution card carousel -->
-  <%= render 'cards/partials/cards_carousel' if @contributions.any? %>
+  <%= render 'cards/partials/cards_carousel' if contributions.any? %>
   <!-- card project -->
-  <%= render 'cards/partials/card_project_body' %>
+  <%= render 'cards/partials/card_project_body', card: card, contributions: contributions %>
   <!-- card project footer -->
   <%= render 'cards/partials/card_project_footer' %>
 </div>

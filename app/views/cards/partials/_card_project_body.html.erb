@@ -1,4 +1,4 @@
-<div class="card-project">
+<div class="card-project style= " background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= image_url('templates/' + card.template) %>);">
   <% @curated_contributions.each do |contribution| %>
     <% if contribution.photo.attached? %>
       <%=render 'cards/partials/polaroid', contribution: contribution %>
@@ -9,5 +9,7 @@
       </div>
     <% end %>
   <% end %>
-</div>
+  <%= simple_form_for @card do |f| %>
+    <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo '}, label: ('<i class="fas fa-arrow-circle-up"></i>').html_safe%>
+  <% end %>
 </div>
