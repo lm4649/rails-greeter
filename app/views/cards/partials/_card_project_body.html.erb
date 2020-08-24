@@ -1,9 +1,11 @@
-  
 <div class="card-project">
   <% @curated_contributions.each do |contribution| %>
     <div class="contribution-mini-card" style= "transform: translateY(<%= rand(100) %>px) rotateZ(<%= rand(-1..1)*10 %>deg);">
       <p><%= contribution.content %></p>
       <strong><%= contribution.contributor_name %></strong>
     </div>
+  <% end %>
+  <%= simple_form_for @card do |f| %>
+    <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo '}, label: ('<i class="fas fa-arrow-circle-up"></i>').html_safe%>
   <% end %>
 </div>
