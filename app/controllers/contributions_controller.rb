@@ -33,6 +33,6 @@ class ContributionsController < ApplicationController
   private
 
   def contribution_params
-    params.require(:contribution).permit(:contributor_name, :contributor_email, :content, :rejected)
+    params.require(:contribution).permit(:contributor_name, :contributor_email, :content, :rejected, :photo)
   end
 end
