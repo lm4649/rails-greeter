@@ -1,8 +1,12 @@
 <div class="container bg-success mb-5" >
   <div class="d-flex justify-content-between">
     <h2 class= "text-primary"><%= pluralize(@contributions.count, 'contribution') %></h2>
+    <!-- The text field -->
+    <div class = "d-flex">
     <!-- to share the link to enable other people to contribute to the card -->
-    <%= render 'cards/partials/btn_share_link' %>
+      <%= render 'cards/partials/btn_share_link' %>
+      <%= social_share_button_tag(@card.title, url: request.original_url, desc: @card.description) %>
+    </div>
   </div>
   <br>
   <!-- glide.js contribution card carousel -->
