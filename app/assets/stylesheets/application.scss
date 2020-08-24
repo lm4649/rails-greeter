@@ -7,10 +7,12 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-// Glide.js Required Core Stylesheet
+/* Glide.js Required Core Stylesheet*/
 @import "@glidejs/glide/src/assets/sass/glide.core";
-// Glide.js Optional Theme Stylesheet
+/* Glide.js Optional Theme Stylesheet*/
 @import "@glidejs/glide/src/assets/sass/glide.theme";
+/* Social share button */
+@import "social-share-button";
 
 
 // Your CSS partials
@@ -25,4 +27,15 @@ li {
 
 a:hover {
   text-decoration: none;
+}
+
+// size of social share buttons
+$size: 32px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
 }

@@ -7,7 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
+require('packs/social-share-button.js.erb')
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -25,6 +25,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "controllers"
 
 
 // Internal imports, e.g:
@@ -45,6 +46,15 @@ document.addEventListener('turbolinks:load', () => {
 });
   }
 
+
+// sweet aler for successful share link copy
+  simpleTrigger('#sweet-share', {
+      title: "Link copied",
+      text: "share it with your relatives so as they contribute to the card",
+      icon: "success"
+    });
+
   initGlide();
   initBanner();
 });
+
