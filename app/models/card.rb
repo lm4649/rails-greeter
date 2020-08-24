@@ -1,4 +1,6 @@
 class Card < ApplicationRecord
+  TEMPLATES = %w(bday1.jpg bday3.jpg wedding1.jpg wedding2.jpg wedding3.jpg wedding4.jpg)
+
   belongs_to :user
   has_many :contributions, dependent: :destroy
   validates :title, presence: true, length: { minimum: 2 }

@@ -1,9 +1,15 @@
-<div class="card-project">
+<div class="card-project style= " background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= image_url('templates/' + card.template) %>);">
   <% @curated_contributions.each do |contribution| %>
-    <div class="contribution-mini-card" style= "transform: translateY(<%= rand(100) %>px) rotateZ(<%= rand(-1..1)*10 %>deg);">
-      <p><%= contribution.content %></p>
-      <strong><%= contribution.contributor_name %></strong>
-      <%= cl_image_tag contribution.photo.key, height: 30, width: 40, crop: :fill %>
-    </div>
+    <% if contribution.photo.attached? %>
+      <%=render 'cards/partials/polaroid', contribution: contribution %>
+    <% else %>
+      <div class="contribution-mini-card" style= "transform: translateY(<%= rand(100) %>px) rotateZ(<%= rand(-1..1)*10 %>deg);">
+        <p><%= contribution.content %></p>
+        <strong><%= contribution.contributor_name %></strong>
+      </div>
+    <% end %>
+  <% end %>
+  <%= simple_form_for @card do |f| %>
+    <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo '}, label: ('<i class="fas fa-arrow-circle-up"></i>').html_safe%>
   <% end %>
 </div>
