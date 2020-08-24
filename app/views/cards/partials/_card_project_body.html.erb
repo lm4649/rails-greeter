@@ -1,5 +1,5 @@
 <!-- 'templates/' + card.template -->
-<% if card.template.empty? %>
+<% if card.template.blank? %>
   <div class="card-project" style= "background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= image_url('cardproject.jpg') %>);">
   <% else %>
     <div class="card-project" style= "background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(<%= image_url('templates/' + card.template)%>);">
@@ -8,7 +8,9 @@
     <div class="card-left" style="transform: rotateZ(-8deg);">
       <% (0...4).each do |i| %>
         <% contribution = @curated_contributions[i] %>
-        <%=render 'cards/partials/contributions_column', contribution: contribution %>
+        <% if contribution %>
+          <%=render 'cards/partials/contributions_column', contribution: contribution %>
+        <% end %>
       <% end %>
     </div>
     <div class="card-center">
@@ -21,7 +23,9 @@
     <div class="card-right" style="transform: rotateZ(3deg);">
       <% (4...8).each do |i| %>
         <% contribution = @curated_contributions[i] %>
-        <%=render 'cards/partials/contributions_column', contribution: contribution %>
+        <% if contribution %>
+          <%=render 'cards/partials/contributions_column', contribution: contribution %>
+        <% end %>
       <% end %>
     </div>
     <!-- upload the main picture in the middle of the card -->
