@@ -1,13 +1,13 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn  btn-sm btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button type="button" class="btn  btn-sm btn-primary" data-toggle="modal" data-target="#shareModalCenter">
   Share
 </button>
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="shareModalCenter" tabindex="-1" role="dialog" aria-labelledby="shareModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"><%= social_share_button_tag(@card.title, url: request.original_url, desc: @card.description) %></h5>
+        <h5 class="modal-title" id="shareModalLongTitle"><%= social_share_button_tag(@card.title, url: request.original_url, desc: @card.description) %></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -15,7 +15,7 @@
       <div class="modal-body">
         <div data-controller = "share" class="input-group mb-3">
           <!-- BEwARE! INPUT FIELD SET TO DISPLAY: NONE! -->
-          <input data-target = "share.link" class="form-control" type="text" value='<%= request.original_url%>' aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          <input data-target = "share.link" class="form-control" type="text" value='<%= request.original_url%>' aria-label="Sizing share input" aria-describedby="inputGroup-sizing-sm">
           <!-- The button used to copy the text -->
           <div class="input-group-append">
             <button data-action="click->share#copy" class="btn btn-primary" data-toggle="tooltip" id="sweet-share" data-placement="bottom" title="click to copy the link">copy</button>
