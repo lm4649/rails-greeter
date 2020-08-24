@@ -16,9 +16,12 @@
         <div class="modal-body">
           Your friend will receive it on <%=@card.event_date %>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-          <%= link_to "Preview", card_preview_path(@card), class: 'btn btn-primary' %>
+        <div class="modal-footer d-flex justify-content-between">
+          <%= link_to "Send now", send_card_path(@card), class: 'btn btn-outline-info' %>
+          <div>
+            <%= link_to "Preview", card_preview_path(@card), class: 'btn btn-primary' %>
+            <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>

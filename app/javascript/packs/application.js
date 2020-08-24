@@ -7,7 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-
+require('packs/social-share-button.js.erb')
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -25,6 +25,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "controllers"
 
 
 // Internal imports, e.g:
@@ -37,12 +38,25 @@ import { photoSelect } from './components/template';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  simpleTrigger('#sweet-alert-success', {
-  title: "Thank you for your contribution",
-  text: "You will receive the link to the card when its finalized",
-  icon: "success"
+  const swalContrib = document.getElementById('sweet-alert-contribution');
+  if (swalContrib){
+    simpleTrigger('#sweet-alert-contribution', {
+  title: 'Thanks for contributing',
+  text: 'You will be redirected to the card preview',
+  icon: 'success'
 });
+  }
+
+
+// sweet aler for successful share link copy
+  simpleTrigger('#sweet-share', {
+      title: "Link copied",
+      text: "share it with your relatives so as they contribute to the card",
+      icon: "success"
+    });
+
   initGlide();
   initBanner();
   photoSelect();
 });
+
