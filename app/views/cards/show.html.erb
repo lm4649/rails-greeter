@@ -21,7 +21,7 @@
 <% end %>
 <!-- rendering list of contributions for the manager or the contributions form for the contributors -->
 <% if user_signed_in? && current_user == @card.user %>
-  <%= render "cards/partials/show_all" %>
+  <%= render "cards/partials/show_all", card: @card, contributions: @contributions %>
 <% else %>
   <%= render "cards/partials/contribution_form" %>
 <% end %>

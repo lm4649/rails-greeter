@@ -2,6 +2,8 @@
   <div class="display-flex mt5">
     <%= simple_form_for(@card) do |f| %>
       <%= f.input :title %>
+      <%= f.input :template, as: :hidden %>
+      <%= render "cards/partials/card_templates" %>
       <%= f.button :submit,  class: "btn-primary" %>
     <% end %>
   </div>

@@ -1,0 +1,10 @@
+<div class="template-container">
+  <div class="templates">
+    <% Card::TEMPLATES.each do |template|  %>
+      <%= image_tag "templates/#{template}", alt: "alttext", width: "200px", class: "template", data: {name: template} %>
+    <% end %>
+  </div>
+  <div class="chosen-template">
+    <%= image_tag "templates/#{Card::TEMPLATES.last}", alt: "alttext", width: "500px", id: "chosen-image"%>
+  </div>
+</div>

@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_024632) do
+
+ActiveRecord::Schema.define(version: 2020_08_24_031733) do
+
 
 
   # These are extensions that must be enabled in order to support this database
@@ -46,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_024632) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
+    t.string "template"
     t.string "recipient_email"
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
