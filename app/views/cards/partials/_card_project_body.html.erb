@@ -1,9 +1,5 @@
 <div class="card-project">
   <% @curated_contributions.each do |contribution| %>
-    <div class="contribution-mini-card" style= "transform: translateY(<%= rand(100) %>px) rotateZ(<%= rand(-1..1)*10 %>deg);">
-      <p><%= contribution.content %></p>
-      <strong><%= contribution.contributor_name %></strong>
-      <%= cl_image_tag contribution.photo.key, height: 30, width: 40, crop: :fill %>
-    </div>
+    <%= render 'cards/partials/polaroid', contribution: contribution %>
   <% end %>
 </div>
