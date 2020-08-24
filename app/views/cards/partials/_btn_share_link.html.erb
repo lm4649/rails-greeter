@@ -13,11 +13,13 @@
         </button>
       </div>
       <div class="modal-body">
-        <div data-controller = "share">
+        <div data-controller = "share" class="input-group mb-3">
           <!-- BEwARE! INPUT FIELD SET TO DISPLAY: NONE! -->
-          <input data-target = "share.link" type="text" value='<%= request.original_url%>' aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          <input data-target = "share.link" class="form-control" type="text" value='<%= request.original_url%>' aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
           <!-- The button used to copy the text -->
-          <button data-action="click->share#copy" class="btn btn-sm btn-primary" data-toggle="tooltip" id="sweet-share" data-placement="bottom" title="click to copy the link">copy</button>
+          <div class="input-group-append">
+            <button data-action="click->share#copy" class="btn btn-primary" data-toggle="tooltip" id="sweet-share" data-placement="bottom" title="click to copy the link">copy</button>
+          </div>
         </div>
       </div>
       <div class="modal-footer">
