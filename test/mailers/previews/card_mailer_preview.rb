@@ -7,4 +7,9 @@ class CardMailerPreview < ActionMailer::Preview
     CardMailer.with(card: card).final_card
   end
 
+  def card_to_contributors
+    @contribution = Card.last.contributions.last
+    CardMailer.with(contribution: @contribution).card_to_contributors
+  end
+
 end

@@ -37,13 +37,15 @@ import { simpleTrigger } from './components/init_sweetalert';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-
-  // sweet alert for successful contribution
-  simpleTrigger('#sweet-alert-success', {
-  title: "Thank you for your contribution",
-  text: "You will receive the link to the card when its finalized",
-  icon: "success"
+  const swalContrib = document.getElementById('sweet-alert-contribution');
+  if (swalContrib){
+    simpleTrigger('#sweet-alert-contribution', {
+  title: 'Thanks for contributing',
+  text: 'You will be redirected to the card preview',
+  icon: 'success'
 });
+  }
+
 
 // sweet aler for successful share link copy
   simpleTrigger('#sweet-share', {
@@ -51,7 +53,6 @@ document.addEventListener('turbolinks:load', () => {
       text: "share it with your relatives so as they contribute to the card",
       icon: "success"
     });
-
 
   initGlide();
   initBanner();
