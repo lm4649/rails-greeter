@@ -1,6 +1,6 @@
 <div class="container bg-success mb-5" >
   <div class="d-flex justify-content-between">
-    <h2 class= "text-primary"><%= pluralize(@contributions.count, 'contribution') %></h2>
+    <h2 class= "text-primary"><%= pluralize(contributions.count, 'contribution') %></h2>
     <!-- The text field -->
     <div>
       <input type="text" value='<%= request.original_url%>' id="myInput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
@@ -10,9 +10,9 @@
   </div>
   <br>
   <!-- glide.js contribution card carousel -->
-  <%= render 'cards/partials/cards_carousel' if @contributions.any? %>
+  <%= render 'cards/partials/cards_carousel' if contributions.any? %>
   <!-- card project -->
-  <%= render 'cards/partials/card_project_body' %>
+  <%= render 'cards/partials/card_project_body', card: card, contributions: contributions %>
   <!-- card project footer -->
   <%= render 'cards/partials/card_project_footer' %>
 </div>
