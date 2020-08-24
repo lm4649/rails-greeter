@@ -19,7 +19,7 @@ class ContributionsController < ApplicationController
         redirect_to card_preview_path(@card)
       end
     else
-      # raise
+
       redirect_to card_path(@card), alert: "invalid name or invalid email"
     end
   end
