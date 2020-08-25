@@ -7,6 +7,14 @@
   transform: scale(2);
 }
 
+.polaroid_container {
+  position: relative;
+}
+
+.polaroid_container:hover {
+  z-index: 2;
+}
+
 .wrapper {
   width: 100%;
   padding: 0 2rem;
@@ -111,3 +119,9 @@
   box-shadow: 0 1rem 3rem rgba(0,0,0,0.2);
   transition: all 0.35s;
 }
+
+.expand {
+
+
+}
+
