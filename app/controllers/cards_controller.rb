@@ -70,7 +70,7 @@ class CardsController < ApplicationController
   end
 
   def send_to_contributors
-    @filtered_contributions = @card.contributions.reject { |contribution| contribution.rejected || contribution.contributor_email.nil? }
+    @filtered_contributions = @card.contributions.reject { |contribution| contribution.rejected || contribution.contributor_email.blank? }
     @filtered_contributions.each { |contribution| CardMailer.with(contribution: contribution).card_to_contributors.deliver_now }
   end
 
