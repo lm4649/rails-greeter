@@ -9,7 +9,8 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(card_params)
     @card.user = current_user
-    @card.event_date = Date.today
+    # @card.event_date = Date.today
+    # raise
     if @card.save
       redirect_to edit_card_path(@card)
     else
