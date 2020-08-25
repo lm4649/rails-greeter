@@ -1,5 +1,11 @@
  // @IMPORT <link href="https://fonts.googleapis.com/css?family=Poor+Story" rel="stylesheet">
 
+.focused {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: scale(2);
+}
 
 .wrapper {
   width: 100%;
@@ -10,7 +16,7 @@
 .polaroid {
   background: #fff;
   padding: 0.5rem;
-  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.7);
 
 }
 .polaroid > img{
@@ -21,6 +27,13 @@
   font-size: 1rem;
   text-align: center;
   line-height: 2em;
+
+  p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 200px;
+  }
 }
 .item {
   display: inline-block;
@@ -83,8 +96,8 @@
 }
 .item:hover {
   filter: none;
-  transform: scale(2, 2) rotate(0deg) !important;
-  transition: all 1.4s;
+  transform: rotate(0deg) !important;
+  transition: all 0.4s;
 }
 .item:hover .polaroid:before {
   content: '';

@@ -1,7 +1,3 @@
 <div style= "transform: translateY(<%= rand(100) %>px) rotateZ(<%= rand(-1..1)*10 %>deg);">
-  <% if contribution.photo.attached? %>
-    <%=render 'cards/partials/polaroid', contribution: contribution %>
-  <% else %>
-    <%=render 'cards/partials/mini_contribution', contribution: contribution %>
-  <% end %>
+  <%=render 'cards/partials/polaroid', contribution: contribution %>
 </div>
