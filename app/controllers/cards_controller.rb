@@ -38,14 +38,11 @@ class CardsController < ApplicationController
     @contribution = Contribution.new
     @manager_contribution = manager_contribution(@card)
     # @external_contributions = @card.contributions.select { |contribution| contribution.user.nil? }
-    @contributions = @card.contributions
-    @filtered_contributions = @card.contributions.reject { |contribution| contribution.rejected? }
-    @curated_contributions = turn_pages(@filtered_contributions)
+    prepare_curated_contributions
   end
 
   def preview
-    @contributions = @card.contributions
-    @curated_contributions = @card.contributions.reject { |contribution| contribution.rejected? }
+    prepare_curated_contributions
   end
 
   def send_card
@@ -55,6 +52,12 @@ class CardsController < ApplicationController
   end
 
   private
+
+  def prepare_curated_contributions
+    @contributions = @card.contributions
+    @filtered_contributions = @card.contributions.reject { |contribution| contribution.rejected? }
+    @curated_contributions = turn_pages(@filtered_contributions)
+  end
 
   def turn_pages(contributions)
     @page_num =  contributions.count / MAX_CARDS
