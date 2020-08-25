@@ -121,7 +121,20 @@
 }
 
 .expand {
-
-
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(16%, -50%) rotateZ(8deg) !important;
+  width: 500px;
+  z-index: 2;
 }
 
+.expand .item {
+  filter: none;
+  transform: rotate(0deg) !important;
+}
+
+.expand .caption p {
+    white-space: normal;
+    max-width: 100%;
+}
