@@ -16,7 +16,7 @@
     <div class="card-center">
       <h3><%= card.title %></h3>
       <% if card.photo.attached? %>
-        <%= cl_image_tag card.photo.key, height: 200, width: 400, crop: :fill %>
+        <%= cl_image_tag card.photo.key, width: 400, crop: :fill %>
       <% end %>
     </div>
     <!-- polaroids on the right side -->
