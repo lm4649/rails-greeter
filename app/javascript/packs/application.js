@@ -35,7 +35,9 @@ import { initGlide } from './components/init_glide';
 import { simpleTrigger } from './components/init_sweetalert';
 import { photoSelect } from './components/template';
 import { updateTitlePreview } from './components/title_preview';
+import { polaroidExpand } from './components/polaroid_expand';
 import { showUploadBtn } from './components/show_upload_btn';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -49,7 +51,6 @@ document.addEventListener('turbolinks:load', () => {
 });
   }
 
-
 // sweet aler for successful share link copy
   simpleTrigger('#sweet-share', {
       title: "Link copied",
@@ -60,6 +61,7 @@ document.addEventListener('turbolinks:load', () => {
   initGlide();
   photoSelect();
   updateTitlePreview();
+  polaroidExpand();
   showUploadBtn();
   initBanner();
 });
