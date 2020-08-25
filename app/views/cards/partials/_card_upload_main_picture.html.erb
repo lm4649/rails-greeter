@@ -3,7 +3,7 @@
   <div class="upload-container text-center">
     <%= simple_form_for(@card, remote: true) do |f| %>
       <%= f.input :photo, input_html: { class: 'd-none', id: 'upload-photo' }, label_html: { class: 'upload-photo'}, label: ('<i class="fas fa-arrow-circle-up"></i>').html_safe%>
-      <%= f.button :submit, "upload picture", class: 'btn btn-sm btn-ouline-primary d-none', id:'upload-btn' %>
+      <%= f.button :submit, "upload picture", class: 'btn btn-sm btn-primary d-none', id:'upload-btn' %>
     <% end %>
   </div>
 <% end %>
