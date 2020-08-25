@@ -3,7 +3,7 @@ class Card < ApplicationRecord
 
   belongs_to :user
   has_many :contributions, dependent: :destroy
-  validates :title, presence: true, length: { minimum: 2 }
+  validates :title, presence: true, length: { minimum: 2 }, on: :update
   validates :event_date, presence: true
   validates :recipient_email, allow_blank: true, format: { with: /\A.*@.*\.com\z/ }
   validate :event_date_in_future
