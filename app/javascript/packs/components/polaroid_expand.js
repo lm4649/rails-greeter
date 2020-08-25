@@ -5,14 +5,15 @@ const polaroidExpand = ()=> {
     if (expand){
       expand.forEach((polaroid) =>{
       polaroid.addEventListener('click', (event) => {
-       event.currentTarget.element.classList.toggle(".expand");
-
+        if (!event.currentTarget.classList.contains('expand')) {
+          expand.forEach(polaroid => polaroid.classList.remove("expand"));
+        }
+          event.currentTarget.classList.toggle("expand");
         })
-
       })
-
-    })
+    }
   }
+
 
 
 // creer une fonction
