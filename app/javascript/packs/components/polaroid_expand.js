@@ -1,4 +1,5 @@
 
+
 const polaroidExpand = ()=> {
   const expand = document.querySelectorAll('.polaroid_container');
     if (expand){
@@ -13,6 +14,7 @@ const polaroidExpand = ()=> {
     })
   }
 
+
 // creer une fonction
 // export dans le fichier polaroid
 // import dans application JS
@@ -24,4 +26,6 @@ const polaroidExpand = ()=> {
 // query selector - polaroid_container
 // addEventListener - click - eleemetn selectionne
 // toggle la class expand in polaroid_container pour expand et reduire polaroid_container
+
 export { polaroidExpand };
+

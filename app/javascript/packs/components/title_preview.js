@@ -8,7 +8,7 @@ const updateTitlePreview = ()=> {
       titlePreview.innerText = titleInput.value;
     })
   }
-}
+};
 
 
 export { updateTitlePreview };

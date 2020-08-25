@@ -1,7 +1,13 @@
 <div class="wrapper">
   <div class="item">
-    <div class="polaroid"> <%= cl_image_tag contribution.photo.key, height: 100, width: 200, crop: :fill, gravity: :face %>
-      <div class="caption"><%= contribution.content %></div>
+    <div class="polaroid">
+      <% if contribution.photo.attached? %>
+        <%= cl_image_tag contribution.photo.key, height: 1000, width: 1000, crop: :fill, gravity: :face %>
+      <% end %>
+      <div class="caption">
+        <p><%= contribution.content %></p>
+        <strong><%= contribution.contributor_name %></strong>
+      </div>
     </div>
   </div>
 </div>
