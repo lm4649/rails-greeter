@@ -1,12 +1,12 @@
 <!-- 'templates/' + card.template -->
 <% if card.template.blank? %>
-  <div class="card-project" style= "background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= image_url('cardproject.jpg') %>);">
+  <div class="card-project" id = "card-project" style= "background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= image_url('cardproject.jpg') %>);">
   <% else %>
-    <div class="card-project" style= "background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(<%= image_url('templates/' + card.template)%>);">
+    <div class="card-project" id = "card-project" style= "background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(<%= image_url('templates/' + card.template)%>);">
     <% end %>
     <!-- polaroids on the left side -->
     <div class="card-left" style="transform: rotateZ(-8deg);">
-      <% (0...4).each do |i| %>
+      <% (0..3).each do |i| %>
         <% contribution = @curated_contributions[i] %>
         <% if contribution %>
           <%=render 'cards/partials/contributions_column', contribution: contribution %>
@@ -21,7 +21,7 @@
     </div>
     <!-- polaroids on the right side -->
     <div class="card-right" style="transform: rotateZ(3deg);">
-      <% (4...8).each do |i| %>
+      <% (4..7).each do |i| %>
         <% contribution = @curated_contributions[i] %>
         <% if contribution %>
           <%=render 'cards/partials/contributions_column', contribution: contribution %>
