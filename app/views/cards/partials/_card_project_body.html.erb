@@ -6,7 +6,7 @@
     <% end %>
     <!-- polaroids on the left side -->
     <div class="card-left" style="transform: rotateZ(-8deg);">
-      <% (0...4).each do |i| %>
+      <% (0..3).each do |i| %>
         <% contribution = @curated_contributions[i] %>
         <% if contribution %>
           <%=render 'cards/partials/contributions_column', contribution: contribution %>
@@ -21,7 +21,7 @@
     </div>
     <!-- polaroids on the right side -->
     <div class="card-right" style="transform: rotateZ(3deg);">
-      <% (4...8).each do |i| %>
+      <% (4..7).each do |i| %>
         <% contribution = @curated_contributions[i] %>
         <% if contribution %>
           <%=render 'cards/partials/contributions_column', contribution: contribution %>
@@ -34,10 +34,10 @@
     <% end %>
   </div>
   <div class="turn-pages d-flex justify-content-between">
-    <%= link_to card_path(@card) do  %>
+    <%= link_to card_path(@card, page: @page - 1) do  %>
       <i class="fas fa-arrow-circle-left"></i>
     <% end %>
-    <%= link_to card_path(@card) do  %>
+    <%= link_to card_path(@card, page: @page + 1) do  %>
       <i class="fas fa-arrow-circle-right"></i>
     <% end %>
   </div>
