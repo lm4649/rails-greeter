@@ -1,8 +1,18 @@
 <div class="template-container">
-  <div class="templates">
-    <% Card::TEMPLATES.each do |template|  %>
-      <%= image_tag "templates/#{template}", alt: "alttext", width: "200px", class: "template", data: {name: template} %>
-    <% end %>
+  <div class="glide" style="width:200px;">
+    <div class="glide__track templates" data-glide-el="track">
+      <ul class="glide__slides">
+        <% Card::TEMPLATES.each do |template|  %>
+          <li class="glide__slide">
+            <%= image_tag "templates/#{template}", alt: "alttext", width: "200px", class: "template", data: {name: template} %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class = "d-flex justify-content-center" data-glide-el="controls">
+      <button class="btn btn-sm btn-primary mx-1" data-glide-dir="<">prev</button>
+      <button class="btn btn-sm btn-primary mx-1" data-glide-dir=">">next</button>
+    </div>
   </div>
   <div class="chosen-template">
     <%= image_tag "templates/#{Card::TEMPLATES.last}", alt: "alttext", width: "500px", id: "chosen-image"%>
