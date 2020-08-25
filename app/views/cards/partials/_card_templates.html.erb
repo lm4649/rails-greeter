@@ -8,9 +8,7 @@
     <%= image_tag "templates/#{Card::TEMPLATES.last}", alt: "alttext", width: "500px", id: "chosen-image"%>
     <p id="card-title-preview">choose your title</p>
     <!-- upload the main picture in the middle of the card -->
-    <% unless @card.photo.attached? %>
-      <%=render 'cards/partials/card_upload_main_picture'%>
-    <% end %>
+    <%= f.input :photo, input_html: { class: 'd-none', id: 'upload-photo' }, label_html: { class: 'upload-photo'}, label: ('<i class="fas fa-camera"></i>').html_safe%>
     <div class="d-flex justify-content-end">
       <%= f.button :submit, "Next", class: "btn-primary mt-2 btn-lg" %>
     </div>
