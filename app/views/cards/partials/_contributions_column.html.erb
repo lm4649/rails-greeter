@@ -1,0 +1,8 @@
+<% if contribution.photo.attached? %>
+  <%=render 'cards/partials/polaroid', contribution: contribution %>
+<% else %>
+  <div class="contribution-mini-card" style= "transform: translateY(<%= rand(100) %>px) rotateZ(<%= rand(-1..1)*10 %>deg);">
+    <p><%= contribution.content %></p>
+    <strong><%= contribution.contributor_name %></strong>
+  </div>
+<% end %>
