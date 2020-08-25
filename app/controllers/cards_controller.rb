@@ -64,8 +64,8 @@ class CardsController < ApplicationController
     @page = params[:page].blank? ? 1 : params[:page].to_i
     @page = 1 if @page > @page_num
     @page = @page_num if @page < 1
-    @last_contribution = @page * MAX_CARDS
-    @first_contribution = @last_contribution - MAX_CARDS
+    @last_contribution = @page_num > 1 ? @page * MAX_CARDS : contributions.count
+    @first_contribution = @page_num > 1 ?  @last_contribution - MAX_CARDS : 0
     contributions[@first_contribution...@last_contribution]
   end
 
