@@ -33,3 +33,11 @@
       <%=render 'cards/partials/card_upload_main_picture'%>
     <% end %>
   </div>
+  <div class="turn-pages d-flex justify-content-between">
+    <%= link_to card_path(@card) do  %>
+      <i class="fas fa-arrow-circle-left"></i>
+    <% end %>
+    <%= link_to card_path(@card) do  %>
+      <i class="fas fa-arrow-circle-right"></i>
+    <% end %>
+  </div>
