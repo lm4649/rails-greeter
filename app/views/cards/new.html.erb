@@ -1,8 +1,20 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col col-sm-8">
-      <h1>Let's create a card</h1>
-      <%= render "cards/partials/form" %>
+      <h1><%= @card.title %></h1>
+      <%= simple_form_for @card do |f| %>
+        <%= f.input :recipient %>
+        <%= f.input :recipient_email %>
+        <%= f.input :event_date, html5: true, label: "What's the event's date" %>
+        <%= f.input :description, as: :text, label: "Instructions", placeholder: "Add a video of you dancing to 'Stayin Alive'" %>
+        <%= f.submit "Next", :class => "btn btn-info"%>
+      <%end %>
+      <br>
+      <!-- <h6><%#= button_to "Share this with your friends", card_path(@card), :class => "btn btn-primary" %></h6>
+          <hr> -->
+      <%# if @manager_contribution.nil? %>
+      <%#= link_to "Add your contribution", card_path(@card) , :class => "btn btn-primary" %>
+      <%# end %>
     </div>
   </div>
 </div>
