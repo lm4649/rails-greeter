@@ -2,8 +2,8 @@
 <%if user_signed_in? && current_user == @card.user %>
   <div class="upload-container text-center">
     <%= simple_form_for @card do |f| %>
-      <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo '}, label: ('<i class="fas fa-arrow-circle-up"></i>').html_safe%>
-      <%= f.button :submit, "upload picture", class: 'btn btn-sm btn-ouline-primary' %>
+      <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: ('<i class="fas fa-arrow-circle-up" id= "upload-photo"></i>').html_safe%>
+      <%= f.button :submit, "upload picture", class: 'btn btn-sm btn-ouline-primary d-none' %>
     <% end %>
   </div>
 <% end %>
