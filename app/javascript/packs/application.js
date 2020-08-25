@@ -34,6 +34,7 @@ import { initBanner} from './components/banner';
 import { initGlide } from './components/init_glide';
 import { simpleTrigger } from './components/init_sweetalert';
 import { photoSelect } from './components/template';
+import { updateTitlePreview } from './components/title_preview';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -56,7 +57,8 @@ document.addEventListener('turbolinks:load', () => {
     });
 
   initGlide();
-  initBanner();
   photoSelect();
+  updateTitlePreview();
+  initBanner();
 });
 
