@@ -1,0 +1,21 @@
+.dashboard-title {
+    text-align: center;
+    margin: 25px;
+    color: #6F4A8E;
+}
+
+.dashboard-card-title {
+  h4 {
+    text-align: center;
+    margin: 25px;
+    color: #6F4A8E;
+  }
+}
+
+.dashboard-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 20px;
+}
