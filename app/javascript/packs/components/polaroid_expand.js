@@ -1,18 +1,20 @@
 
 
 const polaroidExpand = ()=> {
-  const expand = document.querySelectorAll('.polaroid_container');
-    if (expand){
-      expand.forEach((polaroid) =>{
-      polaroid.addEventListener('click', (event) => {
-        if (!event.currentTarget.classList.contains('expand')) {
-          expand.forEach(polaroid => polaroid.classList.remove("expand"));
-        }
-          event.currentTarget.classList.toggle("expand");
-        })
+  const expand = document.querySelectorAll('.polaroid-wrapper');
+  console.log(expand)
+  if (expand.length > 0) {
+    expand.forEach((polaroid) =>{
+    polaroid.addEventListener('click', (event) => {
+      console.log(event)
+      if (!event.currentTarget.classList.contains('expand')) {
+        expand.forEach(polaroid => polaroid.classList.remove("expand"));
+      }
+        event.currentTarget.classList.toggle("expand");
       })
-    }
+    })
   }
+}
 
 
 
