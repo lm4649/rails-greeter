@@ -1,27 +1,26 @@
 <!-- main info about the card -->
-<!-- manager, title, date, description -->
-<!-- <p>card created by <%= @card.user.email %></p>-->
+<!-- title, date -->
 <div class="container" style="padding-bottom: 8px;">
   <div class="d-flex justify-content-center">
     <h1 style="margin:0; padding:0"><%= @card.title %></h1>
-    <% if user_signed_in? && current_user == @card.user %>
+    <% if user_signed_in? && current_user == @card.user && @card.draft%>
       <%= link_to edit_card_path(@card), class: 'btn btn-sm btn-succes align-items-center light-gray' do %>
         <i class="far fa-edit"></i>
       <% end %>
     <% end %>
   </div>
   <p class= "text-center light-gray"><%= @card.event_date%></p>
-  <!--  <p class ="text-center"><%#= @card.description %></p> -->
-  <!-- <br>
-  <hr> -->
+  <% unless @card.draft %>
+    <h3 class= "text-center light-gray">Published</h3>
+  <% end %>
 </div>
 <!-- Manager contribution displayed here or the form to add contribution-->
-<% if user_signed_in? && current_user == @card.user && @manager_contribution.nil?  %>
+<% if user_signed_in? && current_user == @card.user && @manager_contribution.nil? && @card.draft %>
   <%= render "cards/partials/contribution_form"  %>
 <% end %>
 <!-- rendering list of contributions for the manager or the contributions form for the contributors -->
 <% if user_signed_in? && current_user == @card.user %>
   <%= render "cards/partials/show_all", card: @card, contributions: @contributions %>
 <% else %>
-  <%= render "cards/partials/contribution_form" %>
+  <%= render "cards/partials/contribution_form" if @card.draft%>
 <% end %>

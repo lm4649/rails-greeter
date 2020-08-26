@@ -48,6 +48,8 @@ class CardsController < ApplicationController
   def send_card
     CardMailer.with(card: @card).final_card.deliver_now
     send_to_contributors
+    sleep(3)
+    @card.update(draft: false)
     redirect_to card_preview_path(@card)
   end
 
