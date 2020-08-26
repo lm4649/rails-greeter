@@ -7,3 +7,18 @@
 .page-body {
   flex-grow: 1
 }
+
+.testimonials {
+  margin-top: 50px;
+  text-align: center;
+  padding: 50px;
+  background-color: #ebebeb;
+  align-items: center;
+}
+
+.testimonial {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
