@@ -3,7 +3,7 @@
 <div
   class="card-project"
   id="card-project"
-  style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(<%= image_url(card.template.blank? ? 'cardproject.jpg' : 'templates/' + card.template)%>); font-size: <%= [max_font_size - @card.contributions.count / 6, min_font_size].max %>px;">
+  style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(<%= image_url(card.template.blank? ? 'templates/bday1.jpg' : 'templates/' + card.template)%>); font-size: <%= [max_font_size - @card.contributions.count / 6, min_font_size].max %>px;">
   <% @card.contributions.in_groups(4, false).each do |group| %>
     <div class="grid-area">
       <% group.each do |contribution| %>
