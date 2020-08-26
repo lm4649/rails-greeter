@@ -35,6 +35,9 @@ import { initGlide } from './components/init_glide';
 import { simpleTrigger } from './components/init_sweetalert';
 import { photoSelect } from './components/template';
 import { updateTitlePreview } from './components/title_preview';
+import { polaroidExpand } from './components/polaroid_expand';
+import { updateUploadBtn } from './components/update_upload_btn';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -48,17 +51,25 @@ document.addEventListener('turbolinks:load', () => {
 });
   }
 
-
-// sweet aler for successful share link copy
+// sweet alert for successful share link copy
   simpleTrigger('#sweet-share', {
       title: "Link copied",
       text: "share it with your relatives so as they contribute to the card",
       icon: "success"
     });
 
-  initGlide();
+  // sweet alert : send email successful
+  simpleTrigger('#sweet-mail', {
+      title: "Someone has been greeted!",
+      text: "Your card has been sent to your friend and the contributors who left an e-mail",
+      icon: "success"
+    });
+
   photoSelect();
+  initGlide();
   updateTitlePreview();
+  polaroidExpand();
+  updateUploadBtn();
   initBanner();
 });
 

@@ -1,5 +1,3 @@
-
-
 .contribution-card {
   background-color: white;
   font-size: 16px;
@@ -23,7 +21,44 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  position: relative
+  position: relative;
+  overflow: hidden;
+  // background-color: grey;
+  // margin: auto;
+  // height: 100%;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-template-rows: 30% 40% 30%;
+  grid-template-areas:
+    "left top right"
+    "left center right"
+    "left bottom right";
+}
+
+.grid-area {
+  display: flex;
+  justify-content: space-evenly;
+  &:nth-child(1) {
+    grid-area: left;
+    flex-direction: column-reverse;
+    padding: 8em 0;
+  }
+  &:nth-child(2) {
+    grid-area: right;
+    flex-direction: column;
+    padding: 8em 0;
+  }
+  &:nth-child(3) {
+    grid-area: top;
+    padding-top: 8em;
+    margin: 0 -30%;
+  }
+  &:nth-child(4) {
+    grid-area: bottom;
+    flex-direction: row-reverse;
+    padding-bottom: 8em;
+    margin: 0 -30%;
+  }
 }
 
 .contribution-mini-card {

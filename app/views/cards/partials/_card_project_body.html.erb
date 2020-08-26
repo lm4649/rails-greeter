@@ -1,35 +1,30 @@
 <!-- 'templates/' + card.template -->
-<% if card.template.blank? %>
-  <div class="card-project" style= "background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= image_url('cardproject.jpg') %>);">
-  <% else %>
-    <div class="card-project" style= "background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(<%= image_url('templates/' + card.template)%>);">
-    <% end %>
-    <!-- polaroids on the left side -->
-    <div class="card-left" style="transform: rotateZ(-8deg);">
-      <% (0...4).each do |i| %>
-        <% contribution = @curated_contributions[i] %>
-        <% if contribution %>
-          <%=render 'cards/partials/contributions_column', contribution: contribution %>
-        <% end %>
+<% max_font_size = 12; min_font_size = 6 %>
+<div
+  class="card-project"
+  id="card-project"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(<%= image_url(card.template.blank? ? 'templates/bday1.jpg' : 'templates/' + card.template)%>); font-size: <%= [max_font_size - @card.contributions.count / 6, min_font_size].max %>px;">
+  <% @curated_contributions.in_groups(4, false).each do |group| %>
+    <div class="grid-area">
+      <% group.each do |contribution| %>
+        <div class="polaroid-wrapper" style="transform: rotate(<%= rand(-25..25) %>deg); z-index: <%= rand(1..5) %>;">
+          <div class="polaroid<%= ' no-media' unless contribution.photo.attached? %>" style="transform: translate(-<%= rand(100) %>%, -<%= rand(20..80) %>%);">
+            <% if contribution.video? %>
+              <div class="media">
+                <%= cl_video_tag contribution.photo.key, width: '100%', controls: true %>
+              </div>
+            <% elsif contribution.photo.attached? %>
+              <div class="media">
+                <%= cl_image_tag contribution.photo.key, height: 1000, width: 1000, crop: :fill, gravity: :face %>
+              </div>
+            <% end %>
+            <div class="caption">
+              <p><%= contribution.content %></p>
+              <p class="author"><%= contribution.contributor_name %></p>
+            </div>
+          </div>
+        </div>
       <% end %>
     </div>
-    <div class="card-center">
-      <h3><%= card.title %></h3>
-      <% if card.photo.attached? %>
-        <%= cl_image_tag card.photo.key, width: 400, crop: :fill %>
-      <% end %>
-    </div>
-    <!-- polaroids on the right side -->
-    <div class="card-right" style="transform: rotateZ(3deg);">
-      <% (4...8).each do |i| %>
-        <% contribution = @curated_contributions[i] %>
-        <% if contribution %>
-          <%=render 'cards/partials/contributions_column', contribution: contribution %>
-        <% end %>
-      <% end %>
-    </div>
-    <!-- upload the main picture in the middle of the card -->
-    <% unless card.photo.attached? %>
-      <%=render 'cards/partials/card_upload_main_picture'%>
-    <% end %>
-  </div>
+  <% end %>
+</div>
