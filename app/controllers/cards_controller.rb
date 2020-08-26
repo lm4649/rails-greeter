@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:edit, :update, :show, :preview, :send_card]
   skip_before_action :authenticate_user!, only: [:show, :preview]
-  MAX_CARDS = 8
+  MAX_CARDS = 15
 
   def new
     @card = Card.new
@@ -60,7 +60,7 @@ class CardsController < ApplicationController
   end
 
   def turn_pages(contributions)
-    @page_num =  contributions.count / MAX_CARDS
+    @page_num =  (contributions.count / MAX_CARDS.to_f).ceil
     @page = params[:page].blank? ? 1 : params[:page].to_i
     @page = 1 if @page > @page_num
     @page = @page_num if @page < 1
