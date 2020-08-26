@@ -6,7 +6,7 @@
         <h5 class="text-light text-center">
           <%=@card.description%>
         </h5>
-        <%= f.input :photo, input_html: { class: 'd-none', id: 'upload-photo' }, label_html: { class: 'upload-photo-polaroid'}, label: ('<i class="fas fa-arrow-circle-up"></i>').html_safe%>
+        <%= f.input :photo, input_html: { class: 'd-none', id: 'upload-photo' }, label_html: { class: 'upload-photo-polaroid text-light'}, label: ('<i class="fas fa-arrow-circle-up"></i>').html_safe%>
       </div>
       <%= f.input :content, as: :text, label: 'Write a nice message', placeholder: "Dear #{@card.recipient}" %>
       <%= f.input :contributor_name, label: 'Your name please' %>
