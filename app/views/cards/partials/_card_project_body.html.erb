@@ -9,7 +9,11 @@
       <% group.each do |contribution| %>
         <div class="polaroid-wrapper" style="transform: rotate(<%= rand(-25..25) %>deg); z-index: <%= rand(1..5) %>;">
           <div class="polaroid<%= ' no-media' unless contribution.photo.attached? %>" style="transform: translate(-<%= rand(100) %>%, -<%= rand(20..80) %>%);">
-            <% if contribution.photo.attached? %>
+            <% if contribution.video? %>
+              <div class="media">
+                <%= cl_video_tag contribution.photo.key, width: '100%', controls: true %>
+              </div>
+            <% elsif contribution.photo.attached? %>
               <div class="media">
                 <%= cl_image_tag contribution.photo.key, height: 1000, width: 1000, crop: :fill, gravity: :face %>
               </div>
