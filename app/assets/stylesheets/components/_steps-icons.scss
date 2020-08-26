@@ -1,6 +1,9 @@
 .steps {
   display: flex;
   justify-content: space-around;
+    p {
+    text-align: center;
+  }
 }
 .step {
   flex: 1;
@@ -25,4 +28,5 @@
     text-align: center;
     margin: 25px 0;
   }
+
 }
