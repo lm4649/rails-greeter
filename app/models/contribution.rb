@@ -8,4 +8,9 @@ class Contribution < ApplicationRecord
   def rejected?
     rejected
   end
+
+  def video?
+    return false unless photo.attached?
+    photo.content_type.match(/video.*/)
+  end
 end
