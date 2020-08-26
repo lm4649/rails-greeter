@@ -17,7 +17,6 @@
 //   }
 // }
 
-
 const photoSelect = () => {
   const buttons = document.querySelectorAll('.slider-btn')
   if(buttons) {
@@ -28,9 +27,9 @@ const photoSelect = () => {
         if (activeSlide) {
           const input = document.querySelector('#card_template');
           input.value = activeSlide.dataset.name;
-          console.log(activeSlide.dataset.name);
-          const chosenTemplate = document.querySelector('#chosen-image');
-          chosenTemplate.src = activeSlide.src
+          // console.log(activeSlide.dataset.name);
+          // const chosenTemplate = document.querySelector('#chosen-image');
+          // chosenTemplate.src = activeSlide.src
         }
     }, 500);
       })
@@ -39,13 +38,5 @@ const photoSelect = () => {
 }
 
 export {photoSelect};
-// const toggleActiveClass = (event) => {
-//     event.currentTarget.classList.toggle('active');
-//   };
 
-//   const toggleActiveOnClick = (sport) => {
-//     template.addEventListener('click', toggleActiveClass);
-// };
-
-// templates.forEach(toggleActiveOnClick);
 
