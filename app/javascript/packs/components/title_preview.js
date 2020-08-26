@@ -1,5 +1,3 @@
-
-
 const updateTitlePreview = ()=> {
   const titleInput = document.getElementById('card_title');
   if (titleInput){
