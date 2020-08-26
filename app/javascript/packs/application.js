@@ -58,8 +58,8 @@ document.addEventListener('turbolinks:load', () => {
       icon: "success"
     });
 
-  initGlide();
   photoSelect();
+  initGlide();
   updateTitlePreview();
   polaroidExpand();
   updateUploadBtn();
