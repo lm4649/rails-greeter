@@ -3,8 +3,7 @@
     <%= simple_form_for(@card) do |f| %>
       <%= f.input :title %>
       <%= f.input :template, as: :hidden %>
-      <%= render "cards/partials/card_templates" %>
-      <%= f.button :submit,  class: "btn-primary" %>
+      <%= render "cards/partials/card_templates", f: f %>
     <% end %>
   </div>
 </div>

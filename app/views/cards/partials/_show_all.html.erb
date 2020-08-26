@@ -11,6 +11,9 @@
   <%= render 'cards/partials/cards_carousel' if contributions.any? %>
   <!-- card project -->
   <%= render 'cards/partials/card_project_body', card: card, contributions: contributions %>
+  <!-- buttons to turn the pages -->
+  <%= render 'cards/partials/pages_buttons', left_page: card_path(@card, page: @page - 1, anchor: "card-project"),
+  right_page: card_path(@card, page: @page + 1, anchor: "card-project") %>
   <!-- card project footer -->
   <%= render 'cards/partials/card_project_footer' %>
 </div>
