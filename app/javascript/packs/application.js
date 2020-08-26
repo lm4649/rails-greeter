@@ -36,7 +36,7 @@ import { simpleTrigger } from './components/init_sweetalert';
 import { photoSelect } from './components/template';
 import { updateTitlePreview } from './components/title_preview';
 import { polaroidExpand } from './components/polaroid_expand';
-import { showUploadBtn } from './components/show_upload_btn';
+import { updateUploadBtn } from './components/update_upload_btn';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -62,7 +62,7 @@ document.addEventListener('turbolinks:load', () => {
   photoSelect();
   updateTitlePreview();
   polaroidExpand();
-  showUploadBtn();
+  updateUploadBtn();
   initBanner();
 });
 
