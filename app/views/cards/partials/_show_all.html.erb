@@ -4,6 +4,8 @@
     <div class = "d-flex">
       <!-- to share the link to enable other people to contribute to the card -->
       <%= render 'cards/partials/btn_share_link' %>
+      <!-- card project footer -->
+      <%= render 'cards/partials/card_project_footer' %>
     </div>
   </div>
   <br>
@@ -14,6 +16,4 @@
   <!-- buttons to turn the pages -->
   <%= render 'cards/partials/pages_buttons', left_page: card_path(@card, page: @page - 1, anchor: "card-project"),
   right_page: card_path(@card, page: @page + 1, anchor: "card-project") %>
-  <!-- card project footer -->
-  <%= render 'cards/partials/card_project_footer' %>
 </div>
