@@ -5,7 +5,7 @@ class Card < ApplicationRecord
   has_many :contributions, dependent: :destroy
   validates :title, presence: true, length: { minimum: 2 }, on: :update
   validates :event_date, presence: true
-  validates :recipient_email, allow_blank: true, format: { with: /\A.*@.*\.com\z/ }
+  validates :recipient_email, allow_blank: true, format: { with: /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/i }
   validate :event_date_in_future
   has_one_attached :photo
 
