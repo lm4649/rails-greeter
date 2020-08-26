@@ -3,10 +3,11 @@
     <h2 class= "text-primary"><%= pluralize(contributions.count, 'contribution') %></h2>
     <div class = "d-flex">
       <!-- to share the link to enable other people to contribute to the card -->
-      <%= render 'cards/partials/btn_share_link' %>
+      <%= render 'cards/partials/btn_share_link' if @card.draft%>
       <!-- Finalize and Preview -->
       <div class="p-3">
-        <%= link_to "Finalize and Preview", card_preview_path(@card), class: 'btn btn-primary' %>
+        <% title = @card.draft? ? "Finalize and Preview" : "View card" %>
+        <%= link_to title, card_preview_path(@card), class: 'btn btn-primary' %>
       </div>
     </div>
   </div>
