@@ -1,3 +1,4 @@
 <%= render 'cards/partials/card_project_body', card: @card, contributions: @curated_contributions %>
 <%= render 'cards/partials/pages_buttons', left_page: card_preview_path(@card, page: @page - 1, anchor: "card-project"),
   right_page: card_preview_path(@card, page: @page + 1, anchor: "card-project") %>
+<%=  render 'cards/partials/card_preview_footer'%>

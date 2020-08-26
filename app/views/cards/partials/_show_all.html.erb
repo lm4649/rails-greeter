@@ -4,8 +4,10 @@
     <div class = "d-flex">
       <!-- to share the link to enable other people to contribute to the card -->
       <%= render 'cards/partials/btn_share_link' %>
-      <!-- card project footer -->
-      <%= render 'cards/partials/card_project_footer' %>
+      <!-- Finalize and Preview -->
+      <div class="p-3">
+        <%= link_to "Finalize and Preview", card_preview_path(@card), class: 'btn btn-primary' %>
+      </div>
     </div>
   </div>
   <br>
