@@ -1,0 +1,21 @@
+
+.idea-title {
+  h2 {
+    text-align: center;
+    margin: 50px;
+  }
+}
+.idea-image {
+  width: 250px;
+  border: 1px solid #45046a;
+}
+
+.ideas-cards {
+  display: flex;
+  justify-content: space-around;
+
+  h5 {
+    text-align: center;
+    margin: 15px;
+  }
+}
