@@ -3,6 +3,7 @@
   h2 {
     text-align: center;
     margin: 50px;
+    color: #3B2F5B;
   }
 }
 .idea-image {
@@ -13,9 +14,11 @@
 .ideas-cards {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 25px;
 
   h5 {
     text-align: center;
     margin: 15px;
+    color: #6f4a8e;
   }
 }
