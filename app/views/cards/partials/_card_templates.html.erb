@@ -1,11 +1,23 @@
 <div class="template-container">
-  <div class="templates">
-    <% Card::TEMPLATES.each do |template|  %>
-      <%= image_tag "templates/#{template}", alt: "alttext", width: "200px", class: "template", data: {name: template} %>
-    <% end %>
-  </div>
-  <div class="chosen-template">
-    <%= image_tag "templates/#{Card::TEMPLATES.last}", alt: "alttext", width: "500px", id: "chosen-image"%>
-    <p id="card-title-preview">choose your title</p>
+  <div class="glide" style="width:700px;">
+    <div class="glide__track templates" data-glide-el="track">
+      <ul class="glide__slides">
+        <% Card::TEMPLATES.each do |template|  %>
+          <li class="glide__slide">
+            <%= image_tag "templates/#{template}", alt: "alttext", width: "100%", class: "template", data: {name: template} %>
+          </li>
+        <% end %>
+      </ul>
+      <p id="card-title-preview">choose your title</p>
+      <!-- upload the main picture in the middle of the card -->
+      <%= f.input :photo, input_html: { class: 'd-none', id: 'upload-photo' }, label_html: { class: 'upload-photo'}, label: ('<i class="fas fa-camera"></i>').html_safe%>
+      <div class="d-flex justify-content-center">
+        <%= f.button :submit, "Create your card", class: "btn-primary mt-2 btn-block" %>
+      </div>
+    </div>
+    <div class = "carousel-controllers d-flex justify-content-around" data-glide-el="controls">
+      <button class="btn btn-outline-primary mx-1 slider-btn" data-glide-dir="<"><i class="fas fa-arrow-circle-left"></i></button>
+      <button class="btn btn-outline-primary mx-1 slider-btn" data-glide-dir=">"><i class="fas fa-arrow-circle-right"></i></button>
+    </div>
   </div>
 </div>

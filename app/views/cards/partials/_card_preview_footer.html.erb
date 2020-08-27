@@ -1,0 +1,12 @@
+<div class="position-fixed" style="top:2%; left:45%;">
+  <%= link_to card_path(@card), class: 'btn btn-outline-info mr-2' do %>
+    <i class="fas fa-undo-alt"></i>
+  <%end%>
+  <% if @card.draft %>
+    <%= link_to send_card_path(@card), class: 'btn btn-success', id: 'sweet-mail' do %>
+      <i class="far fa-paper-plane"></i> Send now
+    <%end%>
+  <% else %>
+    <button type="button" class="btn btn-outline-success" disabled>Published <i class="far fa-check-circle"></i></button>
+  <% end %>
+</div>

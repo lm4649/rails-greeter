@@ -3,7 +3,12 @@
     <h2 class= "text-primary"><%= pluralize(contributions.count, 'contribution') %></h2>
     <div class = "d-flex">
       <!-- to share the link to enable other people to contribute to the card -->
-      <%= render 'cards/partials/btn_share_link' %>
+      <%= render 'cards/partials/btn_share_link' if @card.draft%>
+      <!-- Finalize and Preview -->
+      <div class="p-3">
+        <% title = @card.draft? ? "Finalize and Preview" : "View card" %>
+        <%= link_to title, card_preview_path(@card), class: 'btn btn-primary' %>
+      </div>
     </div>
   </div>
   <br>
@@ -11,6 +16,7 @@
   <%= render 'cards/partials/cards_carousel' if contributions.any? %>
   <!-- card project -->
   <%= render 'cards/partials/card_project_body', card: card, contributions: contributions %>
-  <!-- card project footer -->
-  <%= render 'cards/partials/card_project_footer' %>
+  <!-- buttons to turn the pages -->
+  <%= render 'cards/partials/pages_buttons', left_page: card_path(@card, page: @page - 1, anchor: "card-project"),
+  right_page: card_path(@card, page: @page + 1, anchor: "card-project") %>
 </div>
