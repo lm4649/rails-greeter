@@ -101,6 +101,7 @@
   font-size: 24px;
 }
 
+/* turning the pages */
 .previous-button {
   position: absolute;
   top: 50%;
@@ -119,3 +120,13 @@
   display: flex;
   justify-content: space-between;
 }
+
+/* previous buttons */
+
+.preview_btns {
+  position: fixed;
+  bottom : 2%;
+  right: 1%;
+  z-index: 10000;
+}
+
