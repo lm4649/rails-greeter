@@ -33,22 +33,22 @@
 .grid-area {
   display: flex;
   justify-content: space-evenly;
-  &:nth-child(1) {
+  &:nth-child(2) {
     grid-area: left;
     flex-direction: column-reverse;
     padding: 8em 0;
   }
-  &:nth-child(2) {
+  &:nth-child(3) {
     grid-area: right;
     flex-direction: column;
     padding: 8em 0;
   }
-  &:nth-child(3) {
+  &:nth-child(4) {
     grid-area: top;
     padding-top: 8em;
     margin: 0 -30%;
   }
-  &:nth-child(4) {
+  &:nth-child(5) {
     grid-area: bottom;
     flex-direction: row-reverse;
     padding-bottom: 8em;
@@ -92,4 +92,36 @@
 
 // }
 
+.turn-pages {
+  font-size: 24px;
+}
+
+/* turning the pages */
+.previous-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  display: flex;
+  justify-content: space-between;
+}
+
+.next-button {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* previous buttons */
+
+.preview_btns {
+  position: fixed;
+  bottom : 2%;
+  right: 1%;
+  z-index: 10000;
+}
 
