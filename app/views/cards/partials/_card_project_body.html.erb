@@ -36,5 +36,5 @@
   <% end %>
   <!-- buttons to turn the pages -->
   <%= render 'cards/partials/pages_buttons', left_page: card_path(@card, page: @page - 1, anchor: "card-project"),
-  right_page: card_path(@card, page: @page + 1, anchor: "card-project") %>
+  right_page: card_path(@card, page: @page + 1, anchor: "card-project") unless @fullscreen %>
 </div>

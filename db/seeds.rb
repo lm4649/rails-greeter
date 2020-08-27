@@ -28,14 +28,14 @@ User.all.each do |user|
     picked_title = titles[i - 1]
     date = i - 1 == 2 ? Date.new(2020,12,25) : Date.today + rand(1..15)
     card = Card.new(user: user, title: picked_title, event_date: date, description: "explaining here for who and for what event", recipient_email: user.email)
-    urls = ["https://source.unsplash.com/400x250/?friends", "https://source.unsplash.com/400x250/?couple", "https://source.unsplash.com/400x250/?friends"]
+    urls = ["https://images.unsplash.com/photo-1532498551838-b7a1cfac622e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80", "https://images.unsplash.com/photo-1527594286615-07ea74362be7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80", "https://images.unsplash.com/photo-1545622783-b3e021430fee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"]
     attach_photo(card, urls[i-1], "#{card.title}.jpg")
     # adding 5 contributions to each card, the 1st one is the card manager contribution
     contribution = Contribution.new(user: user, card: card, contributor_name: user.email, content: Faker::Lorem.paragraph(sentence_count: 5))
     url = "https://randomuser.me/api/portraits/#{['men', 'women'].sample}/#{rand(1...100)}.jpg"
     # url = "https://source.unsplash.com/250x400/?friends,party"
     attach_photo(contribution, url, "#{contribution.contributor_name}.jpg")
-    10.times do
+    30.times do
       contribution = Contribution.new(card: card, contributor_name: Faker::Name.unique.first_name, content: Faker::Lorem.paragraph(sentence_count: 5) )
       url = "https://randomuser.me/api/portraits/#{['men', 'women'].sample}/#{rand(1...100)}.jpg"
       # url = "https://source.unsplash.com/250x400/?friends,party"
