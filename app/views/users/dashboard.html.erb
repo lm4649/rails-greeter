@@ -1,12 +1,19 @@
-<h3>Welcome to your dashboard <%= current_user.email %></h3>
+<div class="dashboard-title">
+  <h3>WELCOME TO YOUR DASHBOARD</h3>
+</div>
 <hr>
-<h2>List of cards</h2>
-<ul>
+<div class="dashboard-card-title">
+  <h4>MY CARDS</h4>
+</div>
+<div class="dashboard-list">
   <% @cards.each do |card| %>
-    <li>
-      <%= "#{card.title} (#{card.event_date})" %>
-      <%= link_to "show", card_path(card) %>
-      <%= link_to "edit", edit_card_path(card)  %>
-    </li>
+    <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+      <div class="card-header"><%= "#{card.title}" %></div>
+      <div class="card-body">
+        <h5 class="card-text"><%= "#{card.event_date}" %></h5>
+        <p class="card-text"><%= link_to "show", card_path(card) %></p>
+        <p class="card-text"><%= link_to "edit", edit_card_path(card)  %></p>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
