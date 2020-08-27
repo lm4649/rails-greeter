@@ -34,6 +34,7 @@ import { initBanner} from './components/banner';
 import { initGlide } from './components/init_glide';
 import { simpleTrigger } from './components/init_sweetalert';
 import { photoSelect } from './components/template';
+import { songSelector } from './components/song_selector';
 import { updateTitlePreview } from './components/title_preview';
 import { polaroidExpand } from './components/polaroid_expand';
 import { updateUploadBtn } from './components/update_upload_btn';
@@ -70,6 +71,7 @@ document.addEventListener('turbolinks:load', () => {
   updateTitlePreview();
   polaroidExpand();
   updateUploadBtn();
+  songSelector();
   initBanner();
 });
 

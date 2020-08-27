@@ -1,0 +1,12 @@
+<div class="song_container">
+  <div class="template">
+    <% Card::SONGS.each do |song|  %>
+      <%= image_tag "templates/#{song}", alt: "alttext", width: "200px",  %>
+      <iframe src="https://open.spotify.com/embed/track/#{song_id}" width="80" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media" class: "template", data: {spotify_id: song_name}></iframe>
+    <% end %>
+  </div>
+  <div class="chosen-template">
+    <%= image_tag "templates/#{Card::SONGS.last}", alt: "alttext", width: "500px", id: "chosen-image"%>
+    <p id="card-title-preview">choose your title</p>
+  </div>
+</div>

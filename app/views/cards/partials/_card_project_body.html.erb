@@ -34,4 +34,7 @@
       <% end %>
     </div>
   <% end %>
+  <% if card.song_id %>
+    <iframe src="https://open.spotify.com/embed/track/<%= card.song_id %>" width="80" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media" class="spotify-iframe"></iframe>
+  <% end %>
 </div>
