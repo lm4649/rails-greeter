@@ -10,6 +10,10 @@
   position: relative;
 }
 
+.templates {
+  position: relative;
+}
+
 #card-title-preview {
   text-shadow: 2px 2px 8px #FFF;
   position: absolute;
@@ -41,3 +45,9 @@
 .carousel-controllers button {
   font-size: 24px;
 }
+
+#photo-preview {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
