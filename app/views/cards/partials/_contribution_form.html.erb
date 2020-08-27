@@ -1,5 +1,8 @@
-<div class="container mb-3 p-3 d-flex justify-content-center">
-  <div class= "bg-light shadow p-2" style= "width:50%; position:relative;">
+<div class="polaroid-form container mb-3 p-3 d-flex justify-content-center">
+  <div id="polaroid-form-sample">
+    <%= render 'cards/partials/polaroid', contribution: Contribution.first %>
+  </div>
+  <div class= "bg-light shadow p-3" style= "width:50%; position:relative;">
     <%= simple_form_for([@card, @contribution], remote: true) do |f| %>
       <!-- fake polaroid  -->
       <div class="rounded mb-2 d-flex justify-content-center align-items-center position-relative" style="background-color: rgba(0,0,0,0.8); height:40vh">

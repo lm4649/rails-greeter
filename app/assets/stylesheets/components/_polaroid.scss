@@ -106,3 +106,24 @@
   }
 }
 
+/*--------------- polaroid style form--------------- */
+
+.polaroid-form {
+  position: relative;
+}
+
+.polaroid-sample-wrapper{
+  position: relative;
+  transition: transform 0.2s ease-out, filter 0.2s ease-out;
+  &:hover img {
+    filter: grayscale(0);
+  }
+
+}
+
+#polaroid-form-sample {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 4%;
+  left: 0;
+}
