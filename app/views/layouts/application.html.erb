@@ -10,12 +10,12 @@
   </head>
   <body>
     <div class="page-container">
-      <%= render 'shared/navbar' %>
+      <%= render 'shared/navbar' unless @fullscreen %>
       <%= render 'shared/flashes' %>
       <div class="page-body">
         <%= yield %>
       </div>
-      <%= render 'shared/footer' %>
+      <%= render 'shared/footer' unless @fullscreen %>
     </div>
   </body>
 </html>

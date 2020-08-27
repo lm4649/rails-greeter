@@ -1,7 +1,7 @@
 <!-- 'templates/' + card.template -->
 <% max_font_size = 12; min_font_size = 6 %>
 <div
-  class="card-project"
+  class="card-project <%= 'vh-100'  if @fullscreen %>"
   id="card-project"
   style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(<%= image_url(card.template.blank? ? 'templates/bday1.jpg' : 'templates/' + card.template)%>); font-size: <%= [max_font_size - @card.contributions.count / 6, min_font_size].max %>px;">
   <!-- central picture and title -->

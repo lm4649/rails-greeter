@@ -42,6 +42,7 @@ class CardsController < ApplicationController
 
   def preview
     prepare_curated_contributions
+    @fullscreen = true
   end
 
   def send_card

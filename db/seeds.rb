@@ -22,6 +22,13 @@ puts "#{User.count} users created"
 
 puts 'adding cards and contributions for each user'
 
+def attach_photo(contribution)
+  url = "https://randomuser.me/api/portraits/#{['men', 'women'].sample}/#{rand(1...100)}.jpg"
+  uploaded_img = URI.open(url)
+  contribution.photo.attach( io: uploaded_img, filename: "#{contribution.contributor_name}.jpg", content_type: 'image/jpg')
+  contribution.save
+end
+
 User.all.each do |user|
   # adding 10 cards to each user
   10.times do
@@ -30,13 +37,11 @@ User.all.each do |user|
     date = titles.index(picked_title) == 2 ? Date.new(2020,12,25) : Date.today + rand(1..15)
     card = Card.create!(user: user, title: picked_title, event_date: date, description: "explaining here for who and for what event", recipient_email: user.email)
     # adding 5 contributions to each card, the 1st one is the card manager contribution
-    Contribution.create!(user: user, card: card, contributor_name: user.email, content: Faker::Lorem.paragraph(sentence_count: 5))
-    24.times do
+    contribution = Contribution.create!(user: user, card: card, contributor_name: user.email, content: Faker::Lorem.paragraph(sentence_count: 5))
+    attach_photo(contribution)
+    20.times do
       contribution = Contribution.new(card: card, contributor_name: Faker::Name.unique.first_name, content: Faker::Lorem.paragraph(sentence_count: 5) )
-      url = "https://randomuser.me/api/portraits/#{['men', 'women'].sample}/#{rand(1...100)}.jpg"
-      puts URI.parse(url)
-      contribution.photo.key = URI.parse(url)
-      contribution.save
+      attach_photo(contribution)
     end
   end
 end
