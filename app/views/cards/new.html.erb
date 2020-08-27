@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col col-sm-8">
-      <h1>Card Info</h1>
+      <h1>Let's add your receiver</h1>
       <h1><%= @card.title %></h1>
       <%= simple_form_for @card do |f| %>
-        <%= f.input :recipient, label: "Recipient's name", placeholder: "Doug Trap Master" %>
-        <%= f.input :recipient_email, label: "Recipient's email address", placeholder: "itsAtrap@lewagon.com" %>
+        <%= f.input :recipient, label: "What's the receiver's name?", placeholder: "Doug Trap Master" %>
+        <%= f.input :recipient_email, label: "What's the receiver's email address?", placeholder: "itsAtrap@lewagon.com" %>
         <%= f.input :event_date, html5: true, label: "What's the event's date" %>
-        <%= f.input :description, as: :text, label: "Instructions", placeholder: "Add a video of you dancing to 'Stayin Alive'" %>
+        <%= f.input :description, as: :text, label: "What do you want your friends to add in the card?", placeholder: "Add a video of you dancing to 'Stayin Alive'" %>
         <%= f.submit "Next", :class => "btn btn-info"%>
       <%end %>
       <br>
