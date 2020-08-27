@@ -18,8 +18,25 @@ const updateUploadBtn = () => {
         if (icon.classList.contains('validation-color'))icon.classList.remove('validation-color');
       }
     })
+
+     // we add a listener to know when a new picture is uploaded
+    uploadInput.addEventListener('change', () => {
+      // we call the displayPreview function (who retrieve the image url and display it)
+      displayPreview(uploadInput);
+    })
   }
 
+};
+
+const displayPreview = (input) => {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      document.getElementById('photo-preview').src = event.currentTarget.result;
+    }
+    reader.readAsDataURL(input.files[0])
+    document.getElementById('photo-preview').classList.remove('hidden');
+  }
 };
 
 
