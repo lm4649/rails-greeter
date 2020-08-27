@@ -2,6 +2,7 @@
   <div class="display-flex mt5">
     <%= simple_form_for(@card) do |f| %>
       <%= f.input :title %>
+      <%= f.input :song_id, as: :radio_buttons, collection: Card::SONGS %>
       <%= f.input :template, as: :hidden %>
       <%= render "cards/partials/card_templates", f: f %>
     <% end %>
