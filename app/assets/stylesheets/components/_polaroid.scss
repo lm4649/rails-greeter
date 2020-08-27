@@ -121,3 +121,26 @@
   }
 }
 
+/*--------------- polaroid style form--------------- */
+
+.polaroid-form {
+  position: relative;
+}
+
+.polaroid-sample-wrapper{
+  position: relative;
+  transform: rotate(5deg);
+  font-size: 22px;
+  .polaroid {
+    position: relative;
+    margin: 2em auto;
+    left: unset;
+  }
+  img {
+    filter: grayscale(0);
+  }
+
+}
+
+#polaroid-form-sample {
+}

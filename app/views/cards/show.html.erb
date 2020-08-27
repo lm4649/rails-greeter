@@ -3,7 +3,7 @@
 <div class="container" style="padding-bottom: 8px;">
   <div class="d-flex justify-content-center">
     <h1 style="margin:0; padding:0"><%= @card.title %></h1>
-    <% if user_signed_in? && current_user == @card.user && @card.draft%>
+    <% if @manager && @card.draft%>
       <%= link_to edit_card_path(@card), class: 'btn btn-sm btn-succes align-items-center light-gray' do %>
         <i class="far fa-edit"></i>
       <% end %>
@@ -13,13 +13,24 @@
   <% unless @card.draft %>
     <h3 class= "text-center light-gray">Published</h3>
   <% end %>
+  <!-- to share the link to enable other people to contribute to the card -->
+  <%= render 'cards/partials/btn_share_link' if @card.draft%>
 </div>
 <!-- Manager contribution displayed here or the form to add contribution-->
-<% if user_signed_in? && current_user == @card.user && @manager_contribution.nil? && @card.draft %>
-  <%= render "cards/partials/contribution_form"  %>
+<% if @manager && @manager_contribution.nil? && @card.draft %>
+  <div class = "d-flex justify-content-center mb-3">
+    <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Add your contribution
+    </button>
+  </div>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <%= render "cards/partials/contribution_form"  %>
+    </div>
+  </div>
 <% end %>
 <!-- rendering list of contributions for the manager or the contributions form for the contributors -->
-<% if user_signed_in? && current_user == @card.user %>
+<% if @manager %>
   <%= render "cards/partials/show_all", card: @card, contributions: @contributions %>
 <% else %>
   <%= render "cards/partials/contribution_form" if @card.draft%>

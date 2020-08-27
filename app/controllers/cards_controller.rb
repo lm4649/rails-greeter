@@ -36,8 +36,8 @@ class CardsController < ApplicationController
     # @card = Card.find(params[:id])
     @contribution = Contribution.new
     @manager_contribution = manager_contribution(@card)
-    # @external_contributions = @card.contributions.select { |contribution| contribution.user.nil? }
     prepare_curated_contributions
+    @manager = manager?
   end
 
   def preview
@@ -54,6 +54,10 @@ class CardsController < ApplicationController
   end
 
   private
+
+  def manager?
+    user_signed_in? && current_user == @card.user
+  end
 
   def prepare_curated_contributions
     @contributions = @card.contributions
