@@ -7,8 +7,8 @@ User.destroy_all
 
 puts 'create 3 users : Micky, Marc and Samir'
 
-# User.create!(email: 'micky@lewagon.com', password: 'greeter1234')
-# User.create!(email: 'samir@lewagon.com', password: 'greeter1234')
+User.create!(email: 'micky@lewagon.com', password: 'greeter1234')
+User.create!(email: 'samir@lewagon.com', password: 'greeter1234')
 User.create!(email: 'marc@lewagon.com', password: 'greeter1234')
 
 puts "#{User.count} users created"
@@ -35,7 +35,7 @@ User.all.each do |user|
     url = "https://randomuser.me/api/portraits/#{['men', 'women'].sample}/#{rand(1...100)}.jpg"
     # url = "https://source.unsplash.com/250x400/?friends,party"
     attach_photo(contribution, url, "#{contribution.contributor_name}.jpg")
-    30.times do
+    5.times do
       contribution = Contribution.new(card: card, contributor_name: Faker::Name.unique.first_name, content: Faker::Lorem.paragraph(sentence_count: 5) )
       url = "https://randomuser.me/api/portraits/#{['men', 'women'].sample}/#{rand(1...100)}.jpg"
       # url = "https://source.unsplash.com/250x400/?friends,party"
