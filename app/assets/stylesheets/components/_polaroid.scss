@@ -32,6 +32,8 @@
   top: 50%;
   cursor: pointer;
   padding: 1em;
+  display: flex;
+  flex-direction: column;
   .media {
     width: 100%;
     // height: 14em;
@@ -59,18 +61,24 @@
     font-size: 1em;
     text-align: center;
     line-height: 2em;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
 
     p {
 
     text-overflow: ellipsis;
     /* white-space: nowrap; */
-    overflow: hidden;
     max-width: 200px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     }
+  }
+  &.no-media .caption p {
+    -webkit-line-clamp: 5;
   }
 }
 
@@ -91,9 +99,11 @@
       filter: grayscale(0);
     }
   }
-  .caption p {
+  .caption p, .no-media .caption p {
     white-space: normal;
     max-width: 100%;
+    overflow: unset;
+    -webkit-line-clamp: unset;
   }
 }
 
