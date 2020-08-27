@@ -7,7 +7,7 @@
           <%=@card.description%>
         </h5>
         <!-- photo preview -->
-        <%= f.input :photo, input_html: { class: 'd-none', id: 'upload-photo' }, label_html: { class: 'upload-photo-polaroid text-light'}, label: ('<i class="fas fa-arrow-circle-up"></i>').html_safe%>
+        <%= f.input :photo, input_html: { class: 'd-none', id: 'upload-photo' }, label_html: { class: 'upload-photo-polaroid text-light'}, label: ('<i class="fas fa-camera"></i>').html_safe%>
         <%= image_tag "", width: 100, class: "hidden", id: "photo-preview", style: "top: 25%; left: 50%" %>
       </div>
       <%= f.input :content, as: :text, label: 'Write a nice message', placeholder: "Dear #{@card.recipient}" %>
