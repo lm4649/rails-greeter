@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 2020_08_25_060745) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
-    t.string "recipient_email"
     t.string "template"
+    t.string "recipient_email"
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
