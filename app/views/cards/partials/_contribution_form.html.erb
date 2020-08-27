@@ -2,11 +2,13 @@
   <div class= "bg-light shadow p-2" style= "width:50%; position:relative;">
     <%= simple_form_for([@card, @contribution], remote: true) do |f| %>
       <!-- fake polaroid  -->
-      <div class="rounded mb-2 d-flex justify-content-center align-items-center" style="background-color: rgba(0,0,0,0.8); height:40vh">
+      <div class="rounded mb-2 d-flex justify-content-center align-items-center position-relative" style="background-color: rgba(0,0,0,0.8); height:40vh">
         <h5 class="text-light text-center">
           <%=@card.description%>
         </h5>
+        <!-- photo preview -->
         <%= f.input :photo, input_html: { class: 'd-none', id: 'upload-photo' }, label_html: { class: 'upload-photo-polaroid text-light'}, label: ('<i class="fas fa-arrow-circle-up"></i>').html_safe%>
+        <%= image_tag "", width: 100, class: "hidden", id: "photo-preview", style: "top: 25%; left: 50%" %>
       </div>
       <%= f.input :content, as: :text, label: 'Write a nice message', placeholder: "Dear #{@card.recipient}" %>
       <%= f.input :contributor_name, label: 'Your name please' %>
