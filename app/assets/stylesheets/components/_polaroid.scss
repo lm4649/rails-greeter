@@ -24,7 +24,7 @@
 .polaroid {
   font-family: "Gloria Hallelujah";
   width: 16em;
-  // height: 21em;
+  min-height: 16em;
   background-color: white;
   box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.7);
   position: absolute;
@@ -61,10 +61,15 @@
     line-height: 2em;
 
     p {
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-      max-width: 200px;
+
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    overflow: hidden;
+    max-width: 200px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
     }
   }
 }
