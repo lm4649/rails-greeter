@@ -14,18 +14,13 @@
 
 
 .card-project {
-  // width: 1110px;
   height: 740px;
-  // background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
   background-size: cover;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
-  // background-color: grey;
-  // margin: auto;
-  // height: 100%;
   display: grid;
   grid-template-columns: 30% 40% 30%;
   grid-template-rows: 30% 40% 30%;
@@ -90,12 +85,12 @@
   font-size: 36px;
 }
 
-.card-left {
-  padding: 4px;
-  width: 30%;
-  height: 700px;
+// .card-left {
+//   padding: 4px;
+//   width: 30%;
+//   height: 700px;
 
-}
+// }
 
 .turn-pages {
   font-size: 24px;

@@ -37,4 +37,8 @@
   <!-- buttons to turn the pages -->
   <%= render 'cards/partials/pages_buttons', left_page: card_path(@card, page: @page - 1, anchor: "card-project"),
   right_page: card_path(@card, page: @page + 1, anchor: "card-project") unless @fullscreen %>
+  <!-- spotify -->
+  <% if card.song_id %>
+    <iframe src="https://open.spotify.com/embed/track/<%= card.song_id %>" width="80" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media" class="spotify-iframe"></iframe>
+  <% end %>
 </div>
