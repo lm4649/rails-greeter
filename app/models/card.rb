@@ -7,7 +7,10 @@ class Card < ApplicationRecord
     Romantic: "5tdKaKLnC4SgtDZ6RlWeal",
     Chill: "1vsZ486MmylerIHEiHHHOd",
     Grateful: "1Gmz7Q8cpMFFWd9eONMlKO",
-    Wedding: "2jZ8Cb29rIqjNUsHoSYsGC"
+    Wedding: "2jZ8Cb29rIqjNUsHoSYsGC",
+    Birthday: "5T8EDUDqKcs6OSOwEsfqG7",
+    Farewell:"2b8fOow8UzyDFAE27YhOZM",
+    Inspirational: "1VKeMuT9trmVnapTGKLv5g"
   }
 
 
