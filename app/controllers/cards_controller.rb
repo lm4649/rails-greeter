@@ -86,6 +86,6 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:title, :recipient, :recipient_email, :event_date, :description, :draft, :preview, :photo, :template)
+    params.require(:card).permit(:title, :recipient, :recipient_email, :event_date, :description, :draft, :preview, :photo, :template, :song_id)
   end
 end
