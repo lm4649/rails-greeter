@@ -14,7 +14,7 @@
     <h3 class= "text-center light-gray">Published</h3>
   <% end %>
   <!-- to share the link to enable other people to contribute to the card -->
-  <%= render 'cards/partials/btn_share_link' if @card.draft%>
+  <%= render 'cards/partials/btn_share_link' if @manager && @card.draft%>
 </div>
 <!-- Manager contribution displayed here or the form to add contribution-->
 <% if @manager && @manager_contribution.nil? && @card.draft %>
