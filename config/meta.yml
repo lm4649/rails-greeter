@@ -1,5 +1,5 @@
 meta_product_name: "Greeter"
-meta_title: "Greeter - Never miss any moment"
+meta_title: "Greeter - Never miss a moment"
 meta_description: "Create and send a collaborative card to express your feelings to any special moments"
 meta_image: "greeter-logo-tag.png" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
