@@ -6,7 +6,7 @@
       <%= render "cards/partials/card_templates", f: f %>
       <%= f.label :songs %>
       <%=render 'cards/partials/song_selection', f: f, collection: Card::SONGS  %>
-      <%= f.button :submit, "Create your card", class: "btn-primary mt-2 btn-block" %>
+      <%= f.button :submit, "Create your card", class: "btn-primary mt-2 btn-block heavy-upload" %>
     <% end %>
   </div>
 </div>
