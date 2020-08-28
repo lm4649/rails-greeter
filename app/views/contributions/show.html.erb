@@ -1,1 +1,5 @@
-<p>test</p>
+<div style= "background-image = linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(<%= image_url(@template.blank? ? 'templates/bday1.jpg' : 'templates/' + @template)%>);">
+  <div class="container">
+    <%= render 'cards/partials/polaroid', contribution: @contribution %>
+  </div>
+</div>

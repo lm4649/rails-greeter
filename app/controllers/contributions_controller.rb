@@ -6,6 +6,7 @@ class ContributionsController < ApplicationController
 
   def show
     @contribution = Contribution.find(params[:id])
+    @template = @contribution.card.template
   end
 
   def create
