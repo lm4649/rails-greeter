@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :cards, only: [:new, :create, :show, :edit, :update] do
     resources :contributions, only: [:new, :create]
   end
-  resources :contributions, only: :update
+  resources :contributions, only: [:show, :update]
   get '/dashboard', to:'users#dashboard'
 
   resources :cards, only: :show

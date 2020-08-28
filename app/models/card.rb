@@ -2,12 +2,24 @@ class Card < ApplicationRecord
 
   TEMPLATES = %w(bday1.jpg bday2.jpg wedding1.jpg wedding2.jpg wedding3.jpg wedding4.jpg beach.jpg beer.jpg darkwood.jpg map.jpg officedesk.jpg woodendesk.jpg christmas1.jpg christmas2.jpg christmas3.jpg)
 
+  SONGS = {
+    Celebration: "3K7Q9PHUWPTaknlbFPThn2",
+    Romantic: "5tdKaKLnC4SgtDZ6RlWeal",
+    Chill: "1vsZ486MmylerIHEiHHHOd",
+    Grateful: "1Gmz7Q8cpMFFWd9eONMlKO",
+    Wedding: "2jZ8Cb29rIqjNUsHoSYsGC",
+    Birthday: "5T8EDUDqKcs6OSOwEsfqG7",
+    Farewell:"2b8fOow8UzyDFAE27YhOZM",
+    Inspirational: "1VKeMuT9trmVnapTGKLv5g"
+  }
+
 
   belongs_to :user
   has_many :contributions, dependent: :destroy
   validates :title, presence: true, length: { minimum: 2 }, on: :update
+  validates :description, presence: true
   validates :event_date, presence: true
-  validates :recipient_email, allow_blank: true, format: { with: /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/i }
+  validates :recipient_email, presence: true, format: { with: /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/i }
   validate :event_date_in_future
   has_one_attached :photo
 

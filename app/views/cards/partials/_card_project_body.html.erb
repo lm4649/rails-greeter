@@ -1,7 +1,7 @@
 <!-- 'templates/' + card.template -->
 <% max_font_size = 12; min_font_size = 6 %>
 <div
-  class="card-project"
+  class="card-project <%= 'vh-100'  if @fullscreen %>"
   id="card-project"
   style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(<%= image_url(card.template.blank? ? 'templates/bday1.jpg' : 'templates/' + card.template)%>); font-size: <%= [max_font_size - @card.contributions.count / 6, min_font_size].max %>px;">
   <!-- central picture and title -->
@@ -33,5 +33,12 @@
         </div>
       <% end %>
     </div>
+  <% end %>
+  <!-- buttons to turn the pages -->
+  <%= render 'cards/partials/pages_buttons', left_page: card_path(@card, page: @page - 1, anchor: "card-project"),
+  right_page: card_path(@card, page: @page + 1, anchor: "card-project") unless @fullscreen %>
+  <!-- spotify -->
+  <% if card.song_id %>
+    <iframe src="https://open.spotify.com/embed/track/<%= card.song_id %>" width="80" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media" class="spotify-iframe"></iframe>
   <% end %>
 </div>

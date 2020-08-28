@@ -10,8 +10,7 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(card_params)
     @card.user = current_user
-    @card.event_date = Date.today
-    # raise
+    @card.event_date = Date.today if @card.event_date.blank?
     if @card.save
       redirect_to edit_card_path(@card)
     else
@@ -37,12 +36,13 @@ class CardsController < ApplicationController
     # @card = Card.find(params[:id])
     @contribution = Contribution.new
     @manager_contribution = manager_contribution(@card)
-    # @external_contributions = @card.contributions.select { |contribution| contribution.user.nil? }
     prepare_curated_contributions
+    @manager = manager?
   end
 
   def preview
     prepare_curated_contributions
+    @fullscreen = true
   end
 
   def send_card
@@ -54,6 +54,10 @@ class CardsController < ApplicationController
   end
 
   private
+
+  def manager?
+    user_signed_in? && current_user == @card.user
+  end
 
   def prepare_curated_contributions
     @contributions = @card.contributions
@@ -86,6 +90,6 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:title, :recipient, :recipient_email, :event_date, :description, :draft, :preview, :photo, :template)
+    params.require(:card).permit(:title, :recipient, :recipient_email, :event_date, :description, :draft, :preview, :photo, :template, :song_id)
   end
 end

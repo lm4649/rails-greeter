@@ -1,13 +1,17 @@
-<div class="wrapper">
-  <div class="item">
-    <div class="polaroid">
-      <% if contribution.photo.attached? %>
-        <%= cl_image_tag contribution.photo.key, height: 1000, width: 1000, crop: :fill, gravity: :face %>
-      <% end %>
-      <div class="caption">
-        <p><%= contribution.content %></p>
-        <strong><%= contribution.contributor_name %></strong>
+<div class="polaroid-sample-wrapper">
+  <div class="polaroid<%= ' no-media' unless contribution.photo.attached? %>">
+    <% if contribution.video? %>
+      <div class="media">
+        <%= cl_video_tag contribution.photo.key, width: '100%', controls: true %>
       </div>
+    <% elsif contribution.photo.attached? %>
+      <div class="media">
+        <%= cl_image_tag contribution.photo.key, height: 1000, width: 1000, crop: :fill, gravity: :face %>
+      </div>
+    <% end %>
+    <div class="caption">
+      <p><%= contribution.content %></p>
+      <p class="author"><%= contribution.contributor_name %></p>
     </div>
   </div>
 </div>

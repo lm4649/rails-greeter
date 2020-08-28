@@ -11,9 +11,8 @@
       <p id="card-title-preview">choose your title</p>
       <!-- upload the main picture in the middle of the card -->
       <%= f.input :photo, input_html: { class: 'd-none', id: 'upload-photo' }, label_html: { class: 'upload-photo'}, label: ('<i class="fas fa-camera"></i>').html_safe%>
-      <div class="d-flex justify-content-center">
-        <%= f.button :submit, "Create your card", class: "btn-primary mt-2 btn-block" %>
-      </div>
+      <!-- photo preview -->
+      <%= image_tag "", width: 200, class: "hidden", id: "photo-preview", style: " top: 50%; left: 50%" %>
     </div>
     <div class = "carousel-controllers d-flex justify-content-around" data-glide-el="controls">
       <button class="btn btn-outline-primary mx-1 slider-btn" data-glide-dir="<"><i class="fas fa-arrow-circle-left"></i></button>
