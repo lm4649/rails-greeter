@@ -1,5 +1,5 @@
 class ContributionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :create
+  skip_before_action :authenticate_user!, only: [:create, :show]
   def new
     @contribution = Contribution.new
   end
@@ -19,7 +19,7 @@ class ContributionsController < ApplicationController
         redirect_to card_path(@card)
       else
         sleep(3)
-        redirect_to card_preview_path(@card)
+        redirect_to contribution_path(@contribution)
       end
     else
 
