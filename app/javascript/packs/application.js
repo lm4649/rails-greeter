@@ -38,7 +38,7 @@ import { songSelector } from './components/song_selector';
 import { updateTitlePreview } from './components/title_preview';
 import { polaroidExpand } from './components/polaroid_expand';
 import { updateUploadBtn } from './components/update_upload_btn';
-
+import { buttonSpinner } from './components/button_spinner';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -73,5 +73,7 @@ document.addEventListener('turbolinks:load', () => {
   updateUploadBtn();
   songSelector();
   initBanner();
+  buttonSpinner();
+
 });
 
