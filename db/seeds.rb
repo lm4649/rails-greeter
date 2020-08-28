@@ -21,6 +21,15 @@ def attach_photo(model, url, fname)
   model.save
 end
 
+puts "Creating contribution sample (Contribution.first)"
+
+card = Card.create!(user: User.last, title: 'Sample', event_date: Date.today, description: 'Sample card', recipient_email: User.last.email)
+contribution = Contribution.new(user: User.last, card: card, contributor_name: '❤️ Greeter team', content: 'Thank you for all the support, patience and for pushing us to do our best!')
+file = File.open('app/assets/images/greeter_team.jpg')
+contribution.photo.attach(io: file, filename: 'greeter_team.jpg', content_type: 'image/jpg')
+contribution.save
+
+# 3 sample for each user
 User.all.each do |user|
   # adding 10 cards to each user
   3.times do |i|

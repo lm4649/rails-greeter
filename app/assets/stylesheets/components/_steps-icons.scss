@@ -32,3 +32,11 @@
   }
 
 }
+
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .steps {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+}
