@@ -22,3 +22,12 @@
     color: #6f4a8e;
   }
 }
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+
+  .ideas-cards {
+  flex-direction: column;
+  align-items: center;
+  }
+}
