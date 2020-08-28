@@ -1,2 +1,7 @@
-<p>Hi <%= @card.recipient %>, you just received a card :)</p>
-<p><%= link_to "Click here", card_preview_url(@card) %> to view it!</p>
+<div style="margin-left:24px;">
+  <p>Hi <%= @card.recipient %>,</p>
+  <p>
+    Your friends and family have created a card just for <strong>you</strong> on <span style= "color:#6f4a8e">Greeter!</span>
+  </p>
+  <p>See the messages they have all put together to celebrate a special day <%= link_to "HERE", card_preview_url(@card), style: "text-decoration: none; color:#6f4a8e" %> </p>
+</div>

@@ -1,2 +1,13 @@
-Hi <%= @contribution.contributor_name %>, you just received a card :)
-<%= link_to "Click here", card_preview_url(@contribution.card) %> to view it!
+
+A collaborative card just arrived in your inbox.
+
+-------------------------------------------------------------------------------
+
+Hi <%= @contribution.contributor_name %>,
+
+Thank you for your contribution to <span style= "color:#6f4a8e"><%=@contribution.card.recipient%>.
+
+See the messages you and your friends have put together to celebrate a special day <%= link_to "HERE", card_preview_url(@contribution.card), style: "text-decoration: none; color:#6f4a8e" %>
+
+From,
+The Greeter team

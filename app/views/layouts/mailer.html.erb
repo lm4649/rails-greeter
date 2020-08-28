@@ -3,11 +3,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
-      /* Email styles need to be inline */
+      body{background-color: #FEE; margin-left:0;}
+      span{color: #6f4a8e;}
+      h1{margin-left:24px;}
     </style>
   </head>
-
   <body>
+    <h1>A <span>collaborative card</span> just arrived in your inbox.</h1>
     <%= yield %>
+    <footer style="padding: 0"><%= image_tag "greeter-logo-tag.png", alt: "greeter.world", width:'200px' %></footer>
   </body>
 </html>
