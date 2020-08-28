@@ -4,6 +4,10 @@ class ContributionsController < ApplicationController
     @contribution = Contribution.new
   end
 
+  def show
+    @contribution = Contribution.find(params[:id])
+  end
+
   def create
     @contribution = Contribution.new(contribution_params)
     # @contribution.user = current_user
