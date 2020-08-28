@@ -1,2 +1,7 @@
-<p>Hi <%= @contribution.contributor_name %>, you just received a card :)</p>
-<p><%= link_to "Click here", card_preview_url(@contribution.card) %> to view it!</p>
+<div style="margin-left:24px;">
+  <p>Hi <%= @contribution.contributor_name %>,</p>
+  <p>
+    Thank you for your contribution to <span style= "color:#6f4a8e"><%=@contribution.card.recipient%></span>.
+  </p>
+  <p>See the messages you and your friends have put together to celebrate a special day <%= link_to "HERE", card_preview_url(@contribution.card), style: "text-decoration: none; color:#6f4a8e" %> </p>
+</div>
