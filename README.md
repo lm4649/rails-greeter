@@ -1,1 +1,5 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Final project of 3 enthusiastic wagoners from Tokyo batch#429
+
+Create wonderful greeting cards for people dear to you. Invite your friends and family to contribute with messages, pictures, videos and music! 
+
+Made in 10 days with Ruby on Rails 6, Cloudinary and Spotify API.
